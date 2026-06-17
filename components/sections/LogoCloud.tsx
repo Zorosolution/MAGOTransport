@@ -44,9 +44,9 @@ export function LogoCloud() {
               <div
                 key={`${p.name}-${i}`}
                 style={{ width: p.width }}
-                className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-default select-none flex-shrink-0"
+                className="flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors duration-300 cursor-default select-none flex-shrink-0"
               >
-                <span className="text-slate-500 font-semibold text-sm tracking-wide whitespace-nowrap">{p.name}</span>
+                <span className="font-semibold text-sm tracking-wide whitespace-nowrap">{p.name}</span>
               </div>
             ))}
           </motion.div>

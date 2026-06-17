@@ -117,7 +117,7 @@ export function Navbar() {
           <a
             href="tel:+4369911147070"
             className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 transition-all duration-200 cursor-pointer text-sm font-semibold pulse-amber"
-            aria-label="Abschleppdienst anrufen"
+            aria-label="Abschleppdienst anrufen: +43 699 11147070"
           >
             <Phone className="w-3.5 h-3.5" aria-hidden="true" />
             <span className="hidden xl:inline">Abschleppdienst:</span>

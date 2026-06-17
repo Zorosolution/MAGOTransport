@@ -14,7 +14,7 @@ export function MobileCallBar() {
         <a
           href="tel:+4369911147070"
           className="pointer-events-auto flex flex-1 items-center justify-center gap-2.5 py-3.5 rounded-2xl bg-blue-700 text-white font-semibold text-sm shadow-soft-lg active:scale-[0.99] transition-transform"
-          aria-label="MAGOTransport anrufen"
+          aria-label="Anrufen: +43 699 11147070"
         >
           <Phone className="w-4 h-4" aria-hidden="true" />
           Anrufen: +43 699 11147070

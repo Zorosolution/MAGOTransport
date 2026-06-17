@@ -46,7 +46,7 @@ export function CTA() {
                 <a
                   href="tel:+4369911147070"
                   className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-base transition-all duration-200 cursor-pointer shadow-cta"
-                  aria-label="Abschleppdienst anrufen"
+                  aria-label="Abschleppdienst anrufen: +43 699 11147070"
                 >
                   <Phone className="w-5 h-5" aria-hidden="true" />
                   +43 699 11147070

@@ -113,7 +113,7 @@ export function Footer() {
           <a
             href="tel:+4369911147070"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm rounded-xl transition-all cursor-pointer whitespace-nowrap shadow-cta"
-            aria-label="Abschleppdienst anrufen"
+            aria-label="Abschleppdienst anrufen: +43 699 11147070"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
             +43 699 11147070

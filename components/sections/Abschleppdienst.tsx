@@ -58,7 +58,7 @@ export function Abschleppdienst() {
               <a
                 href="tel:+4369911147070"
                 className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all duration-200 cursor-pointer shadow-cta"
-                aria-label="Abschleppdienst anrufen"
+                aria-label="Abschleppdienst anrufen: +43 699 11147070"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
                 Anrufen: +43 699 11147070
@@ -108,7 +108,7 @@ export function Abschleppdienst() {
                   <a
                     href="tel:+4369911147070"
                     className="block text-center py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-2xl tracking-wide mb-6 transition-all duration-200 cursor-pointer shadow-cta"
-                    aria-label="Abschleppdienst anrufen"
+                    aria-label="Abschleppdienst anrufen: +43 699 11147070"
                   >
                     +43 699 11147070
                   </a>

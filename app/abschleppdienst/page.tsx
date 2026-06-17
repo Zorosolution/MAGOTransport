@@ -56,7 +56,7 @@ export default function AbschleppdienstPage() {
               <a
                 href="tel:+4369911147070"
                 className="block text-4xl font-black text-slate-900 hover:text-amber-600 transition-colors cursor-pointer mb-4"
-                aria-label="Abschleppdienst anrufen"
+                aria-label="Abschleppdienst anrufen: +43 699 11147070"
               >
                 +43 699 11147070
               </a>

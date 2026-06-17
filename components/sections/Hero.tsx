@@ -26,9 +26,11 @@ export function Hero() {
   const chipY = reduceMotion ? undefined : chipYRaw;
 
   const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
+  // Transform-only Reveal (kein opacity:0), damit der LCP-Text sofort serverseitig
+  // gerendert wird und nicht auf die Hydration wartet.
   const itemVariants = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
+    hidden: { y: reduceMotion ? 0 : 24 },
+    visible: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
   };
 
   return (
@@ -111,9 +113,9 @@ export function Hero() {
 
           {/* Bildspalte mit sanfter Einblendung und Parallax */}
           <motion.div
-            initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            initial={{ scale: reduceMotion ? 1 : 0.98 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="relative"
           >
             <motion.div style={{ y: imgY }} className="relative">
