@@ -3,7 +3,9 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Phone, Clock, MapPin, Shield, Zap, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import towingImg from "../../public/mago_claude_ready_v2/02_towing_city_einsatz.jpg";
 
 const services = [
   { icon: Zap,     title: "Autos abschleppen",   desc: "Mit unseren großen Anhängern" },
@@ -80,8 +82,18 @@ export function Abschleppdienst() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 aria-hidden="true"
               />
-              <div className="bg-white rounded-3xl p-8 border border-amber-200 shadow-soft-lg relative overflow-hidden">
-                <div className="relative z-10">
+              <div className="bg-white rounded-3xl border border-amber-200 shadow-soft-lg relative overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={towingImg}
+                    alt="MAGOTransport schleppt ein Auto in Wien ab"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 540px"
+                    placeholder="blur"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative z-10 p-8">
                   {/* Notfall-Header */}
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center pulse-amber" aria-hidden="true">

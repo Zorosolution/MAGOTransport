@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import imgGrosseLkw from "../../public/mago_claude_ready_v2/06_iveco_blue_yellow_side.jpg";
+import imgKleineLkw from "../../public/mago_claude_ready_v2/08_mercedes_boxvan_fleet_line.jpg";
+import imgAbschlepp from "../../public/mago_claude_ready_v2/01_hero_abschleppwagen_gelb.jpg";
+import imgAnhaenger from "../../public/mago_claude_ready_v2/04_pickup_vintage_car_transport.jpg";
+import imgFleet from "../../public/mago_claude_ready_v2/12_fleet_overview_depot.jpg";
 
 export const metadata: Metadata = {
   title: "Fuhrpark",
@@ -10,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const flotte = [
-  { typ: "Große Lkw", anzahl: 4, nutzlast: "für größere Mengen", icon: "🚛", desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.", specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und Umgebung"], color: "blue" },
-  { typ: "Kleine Lkw", anzahl: 10, nutzlast: "für die Zustellung", icon: "🚐", desc: "Zehn kleine Lkw für die wendige Zustellung in der Stadt und im Umland. Ideal für Touren mit vielen Stopps.", specs: ["Wendig im Stadtverkehr", "Tägliche Touren", "Zustellung beim Endkunden"], color: "purple" },
-  { typ: "Abschlepp-Lkw", anzahl: 1, nutzlast: "für Pannen und Unfälle", icon: "🏗️", desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.", specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und Umgebung"], color: "amber" },
-  { typ: "Große Anhänger", anzahl: 2, nutzlast: "für Autotransporte", icon: "🚗", desc: "Zwei große Anhänger, mit denen wir Autos abschleppen und transportieren. In seltenen Fällen auch ins Ausland, nur auf Anfrage.", specs: ["Autos transportieren", "Sicher verzurrt", "Ausland auf Anfrage"], color: "green" },
+  { typ: "Große Lkw", anzahl: 4, nutzlast: "für größere Mengen", img: imgGrosseLkw, desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.", specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und Umgebung"], color: "blue" },
+  { typ: "Kleine Lkw", anzahl: 10, nutzlast: "für die Zustellung", img: imgKleineLkw, desc: "Zehn kleine Lkw für die wendige Zustellung in der Stadt und im Umland. Ideal für Touren mit vielen Stopps.", specs: ["Wendig im Stadtverkehr", "Tägliche Touren", "Zustellung beim Endkunden"], color: "purple" },
+  { typ: "Abschlepp-Lkw", anzahl: 1, nutzlast: "für Pannen und Unfälle", img: imgAbschlepp, desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.", specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und Umgebung"], color: "amber" },
+  { typ: "Große Anhänger", anzahl: 2, nutzlast: "für Autotransporte", img: imgAnhaenger, desc: "Zwei große Anhänger, mit denen wir Autos abschleppen und transportieren. In seltenen Fällen auch ins Ausland, nur auf Anfrage.", specs: ["Autos transportieren", "Sicher verzurrt", "Ausland auf Anfrage"], color: "green" },
 ];
 
 const colorConf: Record<string, { border: string; badge: string; count: string }> = {
@@ -57,6 +63,24 @@ export default function FuhrparkPage() {
         </div>
       </section>
 
+      {/* Flottenübersicht */}
+      <section className="pt-14" aria-label="Flottenübersicht">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection>
+            <div className="relative aspect-[16/9] sm:aspect-[2/1] rounded-3xl overflow-hidden border border-slate-200 shadow-soft-lg">
+              <Image
+                src={imgFleet}
+                alt="Fuhrpark von MAGOTransport am Standort in Wien"
+                fill
+                sizes="(max-width: 1280px) 100vw, 1152px"
+                placeholder="blur"
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Fahrzeugkatalog */}
       <section className="py-20" aria-labelledby="flotte-heading">
         <div className="max-w-6xl mx-auto px-6">
@@ -66,18 +90,27 @@ export default function FuhrparkPage() {
               const cfg = colorConf[f.color];
               return (
                 <AnimatedSection key={f.typ} delay={i * 0.07}>
-                  <article className={`bg-white rounded-2xl p-7 border ${cfg.border} shadow-soft hover:shadow-soft-lg transition-all duration-300`}>
-                    <div className="grid md:grid-cols-3 gap-6">
-                      <div>
-                        <span className="text-4xl mb-3 block" aria-hidden="true">{f.icon}</span>
-                        <h3 className="text-slate-900 font-bold text-xl mb-1">{f.typ}</h3>
-                        <div className="flex items-center gap-3">
-                          <span className={`text-2xl font-bold ${cfg.count}`}>{f.anzahl}×</span>
-                          <span className="text-slate-500 text-sm">{f.nutzlast}</span>
-                        </div>
+                  <article className={`bg-white rounded-2xl overflow-hidden border ${cfg.border} shadow-soft hover:shadow-soft-lg transition-all duration-300`}>
+                    <div className="grid md:grid-cols-3">
+                      <div className="relative min-h-[220px] aspect-[4/3] md:aspect-auto overflow-hidden bg-slate-100">
+                        <Image
+                          src={f.img}
+                          alt={`${f.typ} von MAGOTransport`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          placeholder="blur"
+                          className="object-cover"
+                        />
                       </div>
-                      <div className="md:col-span-2 grid sm:grid-cols-2 gap-4">
-                        <p className="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
+                      <div className="md:col-span-2 p-7 grid sm:grid-cols-2 gap-4 items-start">
+                        <div>
+                          <h3 className="text-slate-900 font-bold text-xl mb-1">{f.typ}</h3>
+                          <div className="flex items-center gap-3">
+                            <span className={`text-2xl font-bold ${cfg.count}`}>{f.anzahl}×</span>
+                            <span className="text-slate-500 text-sm">{f.nutzlast}</span>
+                          </div>
+                          <p className="text-slate-600 text-sm leading-relaxed mt-3">{f.desc}</p>
+                        </div>
                         <div>
                           <p className="text-xs text-slate-500 uppercase tracking-wide font-semibold mb-2">Ausstattung</p>
                           <ul className="flex flex-wrap gap-1.5">

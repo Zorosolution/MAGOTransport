@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Phone, Clock, MapPin, Shield, Check, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import truckImg from "../../public/mago_claude_ready_v2/01_hero_abschleppwagen_gelb.jpg";
 
 export const metadata: Metadata = {
   title: "Abschleppdienst und Fahrzeugtransport",
@@ -70,6 +72,24 @@ export default function AbschleppdienstPage() {
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 Jetzt anrufen
               </a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Echtbild Abschleppwagen */}
+      <section className="pb-8" aria-label="Unser Abschleppwagen">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection>
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-amber-200 shadow-soft-lg">
+              <Image
+                src={truckImg}
+                alt="Gelber Abschleppwagen von MAGOTransport im Einsatz in Wien"
+                fill
+                sizes="(max-width: 1280px) 100vw, 1152px"
+                placeholder="blur"
+                className="object-cover"
+              />
             </div>
           </AnimatedSection>
         </div>
