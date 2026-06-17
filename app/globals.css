@@ -211,6 +211,14 @@
   animation: shine-sweep 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.55s 1 both;
 }
 
+/* Hero-Reveal: reine CSS-Transform-Animation (kein opacity:0, kein JS-gating),
+   damit der LCP-Text bereits beim ersten Paint sichtbar ist. */
+@keyframes hero-reveal {
+  from { transform: translateY(22px); }
+  to   { transform: translateY(0); }
+}
+.hero-reveal { animation: hero-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
 /* Dezenter Puls für die Notfallnummer */
 @keyframes pulse-amber {
   0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.35); }

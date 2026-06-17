@@ -25,14 +25,6 @@ export function Hero() {
   const imgY = reduceMotion ? undefined : imgYRaw;
   const chipY = reduceMotion ? undefined : chipYRaw;
 
-  const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
-  // Transform-only Reveal (kein opacity:0), damit der LCP-Text sofort serverseitig
-  // gerendert wird und nicht auf die Hydration wartet.
-  const itemVariants = {
-    hidden: { y: reduceMotion ? 0 : 24 },
-    visible: { y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
-  };
-
   return (
     <section
       ref={ref}
@@ -51,39 +43,34 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 items-center">
 
-          {/* Textspalte */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center text-center lg:items-start lg:text-left"
-          >
-            <motion.div variants={itemVariants} className="mb-6">
+          {/* Textspalte – reine CSS-Reveal-Animation, kein JS-Gating für den LCP-Text */}
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="mb-6 hero-reveal">
               <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 shadow-soft">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
                 <span className="text-xs text-slate-700 font-medium">Auslieferungspartner in Wien seit 2007</span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-slate-900 text-balance"
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-slate-900 text-balance hero-reveal"
+              style={{ animationDelay: "0.06s" }}
             >
               Wir liefern die Ware Ihrer Firma{" "}
               <span className="gradient-text">an Ihre Kunden aus</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-lg sm:text-xl text-slate-600 max-w-xl mb-8 leading-relaxed"
+            <p
+              className="text-lg sm:text-xl text-slate-600 max-w-xl mb-8 leading-relaxed hero-reveal"
+              style={{ animationDelay: "0.12s" }}
             >
               Wir holen die Ware im Lager Ihres Unternehmens ab und stellen sie an Ihre Kunden zu.
               Dazu Abschleppdienst und Fahrzeugtransport. In Wien und Wien-Umgebung.
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center gap-3 mb-9 w-full sm:w-auto"
+            <div
+              className="flex flex-col sm:flex-row items-center gap-3 mb-9 w-full sm:w-auto hero-reveal"
+              style={{ animationDelay: "0.18s" }}
             >
               <Link
                 href="/anfrage"
@@ -99,17 +86,17 @@ export function Hero() {
                 <Phone className="w-4 h-4 text-blue-700" aria-hidden="true" />
                 +43 699 11147070
               </a>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2.5">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2.5 hero-reveal" style={{ animationDelay: "0.24s" }}>
               {trustBadges.map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-1.5 text-sm text-slate-600">
                   <Icon className="w-4 h-4 text-blue-700" aria-hidden="true" />
                   <span>{text}</span>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Bildspalte mit sanfter Einblendung und Parallax */}
           <motion.div
