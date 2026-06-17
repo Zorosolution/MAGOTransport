@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { MapPin, Package, Calendar, Check, ChevronRight, ChevronLeft, AlertCircle, Mail, Phone } from "lucide-react";
-import { buildMailtoHref, type InquiryPayload } from "@/lib/inquiry";
+import { buildMailtoHref, WHATSAPP_LINK, type InquiryPayload } from "@/lib/inquiry";
+import { WhatsAppIcon } from "@/components/shared/WhatsAppIcon";
 
 type Step = 1 | 2 | 3;
 
@@ -125,23 +126,26 @@ export default function AnfragePage() {
 
           {fallbackHref ? (
             <AnimatedSection>
-              <div className="bg-white rounded-2xl p-8 border border-amber-200 shadow-soft text-center">
-                <div className="w-14 h-14 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center mx-auto mb-5" aria-hidden="true">
-                  <Mail className="w-6 h-6 text-amber-600" />
+              <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-soft text-center">
+                <div className="w-14 h-14 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-5" aria-hidden="true">
+                  <Phone className="w-6 h-6 text-blue-700" />
                 </div>
-                <h2 className="text-slate-900 font-bold text-xl mb-2">Anfrage fertig vorbereitet</h2>
+                <h2 className="text-slate-900 font-bold text-xl mb-2">So erreichen Sie uns am schnellsten</h2>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6 max-w-sm mx-auto">
-                  Ihr E-Mail-Programm wurde mit der ausgefüllten Anfrage geöffnet. Bitte senden Sie die
-                  Nachricht ab. Falls sich nichts geöffnet hat, nutzen Sie die Schaltflächen unten.
+                  Rufen Sie uns an oder schreiben Sie über WhatsApp. Ihre Anfrage haben wir bereits als
+                  E-Mail für Sie vorbereitet.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a href={fallbackHref} className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary">
-                    <Mail className="w-4 h-4" aria-hidden="true" />E-Mail öffnen
+                  <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary">
+                    <Phone className="w-4 h-4" aria-hidden="true" />Anrufen
                   </a>
-                  <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white border border-amber-200 text-amber-700 hover:bg-amber-50 font-semibold text-sm transition-all cursor-pointer">
-                    <Phone className="w-4 h-4" aria-hidden="true" />+43 699 11147070
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all cursor-pointer shadow-soft-lg">
+                    <WhatsAppIcon className="w-4 h-4" />WhatsApp
                   </a>
                 </div>
+                <a href={fallbackHref} className="mt-4 inline-flex items-center justify-center gap-1.5 text-sm text-slate-500 hover:text-slate-700 underline underline-offset-2 cursor-pointer">
+                  <Mail className="w-3.5 h-3.5" aria-hidden="true" />Vorbereitete E-Mail öffnen
+                </a>
               </div>
             </AnimatedSection>
           ) : (

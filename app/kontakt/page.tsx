@@ -155,23 +155,28 @@ export default function KontaktPage() {
                       <p className="text-slate-600 text-sm max-w-xs mx-auto">Wir melden uns zeitnah bei Ihnen. Für dringende Anfragen: +43 699 11147070.</p>
                     </motion.div>
                   ) : status === "fallback" ? (
-                    <motion.div key="fallback" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="bg-white rounded-2xl p-12 border border-amber-200 shadow-soft text-center" role="alert">
-                      <Mail className="w-12 h-12 text-amber-600 mx-auto mb-4" aria-hidden="true" />
-                      <h2 className="text-slate-900 text-xl font-bold mb-2">Nachricht vorbereitet.</h2>
+                    <motion.div key="fallback" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="bg-white rounded-2xl p-12 border border-slate-200 shadow-soft text-center" role="alert">
+                      <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-4" aria-hidden="true">
+                        <Phone className="w-6 h-6 text-blue-700" />
+                      </div>
+                      <h2 className="text-slate-900 text-xl font-bold mb-2">So erreichen Sie uns am schnellsten</h2>
                       <p className="text-slate-600 text-sm max-w-sm mx-auto mb-6">
-                        Ihr E-Mail-Programm wurde mit der fertigen Nachricht geöffnet. Bitte senden Sie sie ab.
-                        Falls sich nichts geöffnet hat, nutzen Sie die Schaltflächen unten.
+                        Rufen Sie uns an oder schreiben Sie über WhatsApp. Ihre Nachricht haben wir bereits als
+                        E-Mail für Sie vorbereitet.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        {fallbackHref && (
-                          <a href={fallbackHref} className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary">
-                            <Mail className="w-4 h-4" aria-hidden="true" />E-Mail öffnen
-                          </a>
-                        )}
-                        <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white border border-amber-200 text-amber-700 hover:bg-amber-50 font-semibold text-sm transition-all cursor-pointer">
-                          <Phone className="w-4 h-4" aria-hidden="true" />+43 699 11147070
+                        <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary">
+                          <Phone className="w-4 h-4" aria-hidden="true" />Anrufen
+                        </a>
+                        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all cursor-pointer shadow-soft-lg">
+                          <WhatsAppIcon className="w-4 h-4" />WhatsApp
                         </a>
                       </div>
+                      {fallbackHref && (
+                        <a href={fallbackHref} className="mt-4 inline-flex items-center justify-center gap-1.5 text-sm text-slate-500 hover:text-slate-700 underline underline-offset-2 cursor-pointer">
+                          <Mail className="w-3.5 h-3.5" aria-hidden="true" />Vorbereitete E-Mail öffnen
+                        </a>
+                      )}
                     </motion.div>
                   ) : (
                     <motion.form key="form" onSubmit={handleSubmit} noValidate className="bg-white rounded-2xl p-8 border border-slate-200 shadow-soft space-y-5" aria-label="Kontaktformular">

@@ -10,8 +10,12 @@ import {
 export const runtime = "nodejs";
 
 // Versendet die Anfrage per E-Mail an MAGOTransport.
-// Aktiv, sobald RESEND_API_KEY gesetzt ist. Ohne Konfiguration meldet die Route
-// "nicht zugestellt", damit das Formular auf den mailto-Fallback umschaltet.
+//
+// HINWEIS: Der E-Mail-Versand ist bewusst deaktiviert, bis Domain und Resend
+// eingerichtet sind (siehe .env.example, TODO(Resend)). Ohne RESEND_API_KEY und
+// INQUIRY_FROM_EMAIL meldet die Route "delivered: false", und das Formular
+// schaltet auf Telefon, WhatsApp und vorbereitete E-Mail um. Die Struktur bleibt
+// startklar: sobald die Variablen gesetzt sind, versendet sie ohne Codeänderung.
 export async function POST(request: Request) {
   let payload: InquiryPayload;
   try {
