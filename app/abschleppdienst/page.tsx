@@ -1,45 +1,46 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { GradientOrb } from "@/components/shared/GradientOrb";
 import { Phone, Clock, MapPin, Shield, Check, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import truckImg from "../../public/mago_claude_ready_v2/01_hero_abschleppwagen_gelb.jpg";
 
 export const metadata: Metadata = {
-  title: "Abschleppdienst & Pannenhilfe",
-  description: "MAGOTransport Abschleppdienst: 24/7 Pannenhilfe, Fahrzeugbergung und Abschleppdienst in Österreich und Deutschland. Ø 28 Minuten Reaktionszeit. Jetzt anrufen!",
-  keywords: ["Abschleppdienst", "Pannenhilfe", "Fahrzeugbergung", "24/7 Abschleppdienst", "Autopanne", "Abschleppen Wien", "Pannendienst Österreich"],
+  title: "Abschleppdienst und Fahrzeugtransport",
+  description: "MAGOTransport Abschleppdienst in Wien und Wien-Umgebung. Mit unseren großen Anhängern schleppen und transportieren wir Autos. Ausland nur auf Anfrage. Jetzt anrufen.",
+  keywords: ["Abschleppdienst Wien", "Auto abschleppen Wien", "Fahrzeugtransport Wien", "Abschleppdienst Wien-Umgebung", "Auto transportieren"],
 };
 
 const leistungen = [
-  { icon: "🚨", title: "Pannenhilfe",        desc: "Soforthilfe bei Reifenpanne, Motorschaden, Startproblemen oder leerem Akku direkt am Fahrzeug." },
-  { icon: "🏗️", title: "Abschleppdienst",   desc: "Professionelles Abschleppen auf sicherem Plateau oder Haken — schonend für Ihr Fahrzeug." },
-  { icon: "🚗", title: "Fahrzeugbergung",    desc: "Bergung von Fahrzeugen nach Unfällen, aus Gräben oder von unzugänglichem Gelände." },
-  { icon: "🔧", title: "Leichte Reparaturen",desc: "Kleine Reparaturen direkt vor Ort: Reifenwechsel, Starthilfe, Kraftstoff bringen." },
-  { icon: "🚐", title: "Fahrzeugtransport",  desc: "Transport defekter Fahrzeuge zu Werkstätten, Händlern oder an Ihren Wunschort." },
-  { icon: "🌍", title: "DACH-Einsatzgebiet", desc: "Einsätze in Österreich, Deutschland und der Schweiz — mit starkem Partnernetzwerk." },
+  { icon: "🏗️", title: "Auto abschleppen",     desc: "Wir schleppen Ihr Auto mit unseren großen Anhängern ab, sicher verzurrt und schonend." },
+  { icon: "🚗", title: "Fahrzeugtransport",     desc: "Wir transportieren Autos zu Werkstätten, Händlern oder an Ihren Wunschort." },
+  { icon: "📍", title: "Wien und Umgebung",     desc: "Wir sind in Wien und im Umland unterwegs und kennen die Strecken." },
+  { icon: "🚚", title: "Zwei große Anhänger",   desc: "Mit unseren zwei großen Anhängern transportieren und schleppen wir Autos." },
+  { icon: "🌍", title: "Ausland auf Anfrage",   desc: "In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage." },
+  { icon: "📞", title: "Einfach anrufen",       desc: "Rufen Sie uns an. Wir besprechen Termin, Ort und Ablauf direkt mit Ihnen." },
 ];
 
 export default function AbschleppdienstPage() {
   return (
     <div className="min-h-screen">
-      {/* Notfall-Banner */}
-      <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-black py-2.5 px-4 text-center text-sm font-bold flex items-center justify-center gap-3">
-        <span className="animate-pulse">🚨</span>
-        <span>24/7 Notfall-Hotline:</span>
-        <a href="tel:+43800626424" className="underline text-black font-black text-base hover:no-underline">
-          +43 800 626 424
+      {/* Abschleppdienst-Banner */}
+      <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-slate-950 py-2.5 px-4 text-center text-sm font-bold flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+        <span className="animate-pulse" aria-hidden="true">🏗️</span>
+        <span>Abschleppdienst in Wien und Umgebung:</span>
+        <a href="tel:+4369911147070" className="underline text-slate-950 font-black text-base hover:no-underline">
+          +43 699 11147070
         </a>
-        <span>— Wir sind sofort für Sie da!</span>
+        <span>Rufen Sie uns an.</span>
       </div>
 
       <div className="mt-10">
         <PageHero
-          badge="24/7 Notdienst"
+          badge="Abschleppdienst"
           badgeColor="orange"
           orbColor="orange"
-          title={<>Abschleppdienst & Pannenhilfe – <span className="gradient-text-amber">rund um die Uhr</span></>}
-          description="Eine Panne oder ein Unfall kann jeden treffen. MAGOTransport ist Ihr zuverlässiger Notfallpartner — 365 Tage, 24 Stunden täglich, im gesamten DACH-Raum."
+          title={<>Abschleppdienst und Fahrzeugtransport, <span className="gradient-text-amber">in Wien und Umgebung</span></>}
+          description="Mit unseren großen Anhängern schleppen und transportieren wir Autos in Wien und Wien-Umgebung. In seltenen Fällen auch ins Ausland, aber nur auf Anfrage."
         />
       </div>
 
@@ -47,26 +48,26 @@ export default function AbschleppdienstPage() {
       <section className="py-12" aria-label="Sofortanruf">
         <div className="max-w-2xl mx-auto px-6">
           <AnimatedSection>
-            <div className="glass rounded-3xl p-8 border border-amber-500/30 text-center glow-amber">
-              <div className="w-16 h-16 rounded-full bg-amber-500/20 border-2 border-amber-500/50 flex items-center justify-center mx-auto mb-5 pulse-amber" aria-hidden="true">
-                <Phone className="w-8 h-8 text-amber-400" />
+            <div className="bg-white rounded-3xl p-8 border border-amber-200 shadow-soft-lg text-center">
+              <div className="w-16 h-16 rounded-full bg-amber-100 border-2 border-amber-200 flex items-center justify-center mx-auto mb-5 pulse-amber" aria-hidden="true">
+                <Phone className="w-8 h-8 text-amber-600" />
               </div>
-              <p className="text-slate-400 text-sm mb-2">Jetzt anrufen — sofort verbunden</p>
+              <p className="text-slate-600 text-sm mb-2">Anrufen und Auto abschleppen lassen</p>
               <a
-                href="tel:+43800626424"
-                className="block text-4xl font-black text-white hover:text-amber-400 transition-colors cursor-pointer mb-4"
-                aria-label="Notfall-Hotline anrufen"
+                href="tel:+4369911147070"
+                className="block text-4xl font-black text-slate-900 hover:text-amber-600 transition-colors cursor-pointer mb-4"
+                aria-label="Abschleppdienst anrufen: +43 699 11147070"
               >
-                +43 800 626 424
+                +43 699 11147070
               </a>
-              <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 mb-5">
-                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />24/7 erreichbar</span>
-                <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />Ø 28 Min. Reaktionszeit</span>
-                <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />Vollversichert</span>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-600 mb-5">
+                <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />Wien und Umgebung</span>
+                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />Zwei große Anhänger</span>
+                <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />Sicher verzurrt</span>
               </div>
               <a
-                href="tel:+43800626424"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-black font-black text-base transition-all cursor-pointer glow-amber"
+                href="tel:+4369911147070"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-base transition-all cursor-pointer shadow-cta"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 Jetzt anrufen
@@ -76,20 +77,38 @@ export default function AbschleppdienstPage() {
         </div>
       </section>
 
+      {/* Echtbild Abschleppwagen */}
+      <section className="pb-8" aria-label="Unser Abschleppwagen">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedSection>
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-amber-200 shadow-soft-lg">
+              <Image
+                src={truckImg}
+                alt="Gelber Abschleppwagen von MAGOTransport im Einsatz in Wien"
+                fill
+                sizes="(max-width: 1280px) 100vw, 1152px"
+                placeholder="blur"
+                className="object-cover"
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Leistungen */}
-      <section className="py-20 border-t border-white/8" aria-labelledby="asd-leistungen-heading">
+      <section className="py-20 border-t border-slate-200" aria-labelledby="asd-leistungen-heading">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection className="text-center mb-12">
-            <h2 id="asd-leistungen-heading" className="text-3xl font-bold text-white">Unser Notdienst-Angebot</h2>
-            <p className="text-slate-400 mt-2">Alles was Sie in einer Notsituation brauchen — aus einer Hand.</p>
+            <h2 id="asd-leistungen-heading" className="text-3xl font-bold text-slate-900">Was wir beim Abschleppdienst machen</h2>
+            <p className="text-slate-600 mt-2">Abschleppen und Transport von Autos in Wien und Wien-Umgebung.</p>
           </AnimatedSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {leistungen.map((l, i) => (
               <AnimatedSection key={l.title} delay={i * 0.07}>
-                <article className="glass rounded-2xl p-6 border border-amber-500/15 hover:border-amber-500/30 transition-all duration-300 h-full">
+                <article className="bg-white rounded-2xl p-6 border border-amber-100 shadow-soft hover:shadow-soft-lg hover:border-amber-200 transition-all duration-300 h-full">
                   <span className="text-3xl mb-3 block" aria-hidden="true">{l.icon}</span>
-                  <h3 className="text-white font-semibold mb-2">{l.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{l.desc}</p>
+                  <h3 className="text-slate-900 font-semibold mb-2">{l.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{l.desc}</p>
                 </article>
               </AnimatedSection>
             ))}
@@ -98,26 +117,25 @@ export default function AbschleppdienstPage() {
       </section>
 
       {/* Ablauf */}
-      <section id="pannenhilfe" className="py-20 border-t border-white/8" aria-labelledby="ablauf-heading">
-        <GradientOrb color="orange" size="lg" className="-right-32 top-1/2 -translate-y-1/2 opacity-10" animate={false} />
+      <section id="pannenhilfe" className="py-20 border-t border-slate-200 bg-slate-50" aria-labelledby="ablauf-heading">
         <div className="max-w-3xl mx-auto px-6">
           <AnimatedSection className="text-center mb-12">
-            <h2 id="ablauf-heading" className="text-3xl font-bold text-white mb-3">So funktioniert es</h2>
-            <p className="text-slate-400">In 4 einfachen Schritten vom Anruf bis zur Lösung.</p>
+            <h2 id="ablauf-heading" className="text-3xl font-bold text-slate-900 mb-3">So funktioniert es</h2>
+            <p className="text-slate-600">In vier Schritten vom Anruf bis zum Transport.</p>
           </AnimatedSection>
           <div className="space-y-4">
             {[
-              { n: "1", t: "Anrufen",       d: "Rufen Sie unsere 24h-Hotline an: +43 800 626 424. Wir nehmen sofort ab." },
-              { n: "2", t: "Standort",      d: "Teilen Sie uns Ihren Standort und das Problem mit. GPS-Ortung auf Wunsch." },
-              { n: "3", t: "Wir kommen",    d: "Unser nächstgelegenes Fahrzeug bricht sofort auf. Ø 28 Minuten Ankunftszeit." },
-              { n: "4", t: "Problem gelöst",d: "Pannenbehebung vor Ort oder sicherer Transport zu Ihrem Wunschziel." },
+              { n: "1", t: "Anrufen",         d: "Rufen Sie uns an: +43 699 11147070. Wir besprechen Ihr Anliegen." },
+              { n: "2", t: "Standort und Ziel", d: "Sie nennen uns den Standort des Autos und das Ziel, zum Beispiel die Werkstatt." },
+              { n: "3", t: "Wir kommen vorbei", d: "Wir kommen mit dem Anhänger und verladen das Auto, sicher verzurrt." },
+              { n: "4", t: "Transport",        d: "Wir bringen das Auto an den vereinbarten Ort in Wien oder Wien-Umgebung." },
             ].map((s, i) => (
               <AnimatedSection key={s.n} delay={i * 0.1}>
-                <div className="flex gap-4 glass rounded-2xl p-5 border border-amber-500/15">
-                  <div className="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0 text-amber-400 font-bold" aria-hidden="true">{s.n}</div>
+                <div className="flex gap-4 bg-white rounded-2xl p-5 border border-amber-100 shadow-soft">
+                  <div className="w-10 h-10 rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center flex-shrink-0 text-amber-700 font-bold" aria-hidden="true">{s.n}</div>
                   <div>
-                    <p className="text-white font-semibold">{s.t}</p>
-                    <p className="text-slate-400 text-sm mt-0.5">{s.d}</p>
+                    <p className="text-slate-900 font-semibold">{s.t}</p>
+                    <p className="text-slate-600 text-sm mt-0.5">{s.d}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -127,32 +145,32 @@ export default function AbschleppdienstPage() {
       </section>
 
       {/* Preise */}
-      <section className="py-20 border-t border-white/8">
+      <section className="py-20 border-t border-slate-200">
         <AnimatedSection className="max-w-3xl mx-auto px-6">
-          <div className="glass rounded-2xl p-8 border border-white/8">
-            <h2 className="text-2xl font-bold text-white mb-3">Transparente Preisgestaltung</h2>
-            <p className="text-slate-400 text-sm leading-relaxed mb-5">
-              Unsere Einsatzpreise richten sich nach Einsatzgebiet, Fahrzeugtyp und benötigtem Service.
-              Rufen Sie uns an — wir nennen Ihnen sofort einen fairen Festpreis, ohne versteckte Kosten.
+          <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-soft">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Preise auf Anfrage</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-5">
+              Der Preis richtet sich nach Strecke und Ziel. Rufen Sie uns an, wir nennen Ihnen
+              vorab einen Festpreis, ohne versteckte Kosten.
             </p>
             <ul className="space-y-2 mb-6">
               {[
-                "Festpreise — keine versteckten Gebühren",
-                "Kostenloser Kostenvoranschlag vor dem Einsatz",
-                "ADAC und Versicherungsabrechnung möglich",
-                "Barzahlung, Karte und Überweisung akzeptiert",
+                "Festpreis ohne versteckte Gebühren",
+                "Preis wird vor dem Einsatz genannt",
+                "Wien und Wien-Umgebung",
+                "Ausland nur auf Anfrage",
               ].map((f) => (
                 <li key={f} className="flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true" />
-                  <span className="text-slate-300 text-sm">{f}</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" aria-hidden="true" />
+                  <span className="text-slate-700 text-sm">{f}</span>
                 </li>
               ))}
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="tel:+43800626424" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm transition-all cursor-pointer">
+              <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all cursor-pointer shadow-cta">
                 <Phone className="w-4 h-4" aria-hidden="true" />Jetzt anrufen
               </a>
-              <Link href="/anfrage?typ=abschleppdienst" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl glass border border-white/12 text-white font-medium text-sm hover:border-white/25 transition-all cursor-pointer">
+              <Link href="/anfrage?typ=abschleppdienst" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold text-sm hover:border-blue-200 hover:bg-blue-50 transition-all cursor-pointer shadow-soft">
                 Online anfragen <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
             </div>

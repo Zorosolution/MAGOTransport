@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -19,19 +19,19 @@ export function AnimatedSection({
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const reduceMotion = useReducedMotion();
 
   const directionMap = {
-    up: { y: 32, x: 0 },
-    down: { y: -32, x: 0 },
-    left: { y: 0, x: 32 },
-    right: { y: 0, x: -32 },
+    up: { y: 24, x: 0 },
+    down: { y: -24, x: 0 },
+    left: { y: 0, x: 24 },
+    right: { y: 0, x: -24 },
     none: { y: 0, x: 0 },
   };
 
-  const initial = { opacity: 0, ...directionMap[direction] };
-  const animate = isInView
-    ? { opacity: 1, y: 0, x: 0 }
-    : initial;
+  // Bei prefers-reduced-motion: ohne Versatz, nur sichtbar einblenden
+  const initial = reduceMotion ? { opacity: 0 } : { opacity: 0, ...directionMap[direction] };
+  const animate = isInView ? { opacity: 1, y: 0, x: 0 } : initial;
 
   return (
     <motion.div
@@ -39,8 +39,8 @@ export function AnimatedSection({
       initial={initial}
       animate={animate}
       transition={{
-        duration: 0.6,
-        delay,
+        duration: reduceMotion ? 0.2 : 0.55,
+        delay: reduceMotion ? 0 : delay,
         ease: [0.22, 1, 0.36, 1],
       }}
       className={cn(className)}

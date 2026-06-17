@@ -1,113 +1,91 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { GradientOrb } from "@/components/shared/GradientOrb";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Leistungen",
-  description: "MAGOTransport Leistungen: Nationale und internationale Transporte, Expresslieferungen, Lagerlogistik, Abschleppdienst und Fahrzeugbergung. Ihr Transportunternehmen in Österreich.",
-  keywords: ["Transportunternehmen", "Gütertransport", "Lagerlogistik", "Abschleppdienst", "Expresslieferung", "internationale Transporte"],
+  description: "MAGOTransport Leistungen: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
+  keywords: ["Auslieferung Wien", "Auslieferungspartner", "Zustellung Wien", "Abschleppdienst Wien", "Fahrzeugtransport Wien", "Logistikpartner Wien"],
 };
 
 const leistungsGruppen = [
   {
-    id: "national",
-    label: "Nationale Transporte",
-    icon: "🗺️",
+    id: "auslieferung",
+    label: "Auslieferung für Unternehmen",
+    icon: "📦",
     color: "blue",
-    headline: "Zuverlässige Transporte in ganz Österreich und Deutschland",
-    description: "MAGOTransport ist Ihr professioneller Transportpartner für nationale Gütertransporte. Mit unserer modernen Fahrzeugflotte und erfahrenen Fahrern liefern wir Ihre Waren pünktlich und sicher ans Ziel — von Wien bis Bregenz, von Graz bis Innsbruck.",
+    headline: "Wir liefern die Ware Ihrer Firma an Ihre Kunden aus",
+    description: "Wir sind Auslieferungspartner für andere Unternehmen. Wir holen die Ware im Lager Ihres Betriebs ab und stellen sie an Ihre Kunden zu. Ein eigenes Lager betreiben wir nicht, wir kümmern uns um die Zustellung in Wien und Wien-Umgebung.",
     features: [
-      "Gesamtes Bundesgebiet (Österreich & Deutschland)",
-      "Abholung und Zustellung innerhalb von 24–48 Stunden",
-      "GPS-Echtzeit-Tracking für alle Sendungen",
-      "Haftpflichtversicherung bis €1 Mio. inkl.",
-      "Lieferbestätigung digital und schriftlich",
-      "Stückgut, Teilladung und Komplettladung",
+      "Wien und Wien-Umgebung",
+      "Abholung im Lager des Partnerunternehmens",
+      "Zustellung direkt beim Endkunden",
+      "Feste oder flexible Touren",
+      "Rückmeldung nach jeder Zustellung",
+      "Mehrere Lieferungen pro Tour",
       "Montag bis Freitag regulärer Betrieb",
-      "Samstagslieferungen auf Anfrage",
+      "Samstagszustellung auf Anfrage",
     ],
   },
   {
-    id: "international",
-    label: "Internationale Transporte",
-    icon: "🌍",
-    color: "purple",
-    headline: "Europaweite Transportlösungen – sicher und termingerecht",
-    description: "Wir transportieren Ihre Güter in alle europäischen Länder. Mit unserem umfangreichen Partnernetzwerk, vollständiger Zollabwicklung und mehrsprachigem Kundenservice sind Ihre internationalen Transporte in den besten Händen.",
+    id: "partnerschaft",
+    label: "Partnerschaften",
+    icon: "🤝",
+    color: "green",
+    headline: "Ihr fester Auslieferungspartner in Wien",
+    description: "Sie suchen ein Unternehmen, das Ihre Ware zuverlässig an Ihre Kunden ausliefert? Wir arbeiten bereits mit Unternehmen zusammen und sind offen für neue Partnerschaften.",
     features: [
-      "Alle EU-Länder und Nachbarstaaten",
-      "Komplette Zollabwicklung und Dokumentation",
-      "Partnernetz in 30+ Ländern",
-      "Mehrsprachiger Kundenservice (DE/EN/HR)",
-      "Cargo-Versicherung für alle internationalen Sendungen",
-      "Avisierungsservice beim Empfänger",
-      "Spediteur-Netzwerk für außereuropäische Ziele",
-      "Incoterms-Beratung inklusive",
+      "Dauerhafte Zusammenarbeit",
+      "Planbare und feste Touren",
+      "Skalierbar nach Auftragslage",
+      "Fester Ansprechpartner",
+      "Klare und faire Konditionen",
+      "Offen für neue Partnerschaften",
+      "Abstimmung von Abholzeiten und Gebiet",
     ],
   },
   {
     id: "express",
-    label: "Express- & Sonderfahrten",
+    label: "Express- und Sonderfahrten",
     icon: "⚡",
     color: "amber",
-    headline: "Wenn es schnell gehen muss – wir sind sofort bereit",
-    description: "Dringende Güter, kurzfristige Aufträge oder sensible Direkttransporte: MAGOTransport's Expressdienst setzt Ihre Prioritäten ohne Kompromisse um. Direkttransport ohne Umschlag, auch nachts und am Wochenende.",
+    headline: "Wenn es schnell gehen muss",
+    description: "Dringende Zustellungen am selben Tag oder kurzfristige Sonderfahrten. In Wien und Wien-Umgebung, nach Absprache auch abends und am Wochenende.",
     features: [
-      "Expresslieferung innerhalb von 4–8 Stunden (national)",
-      "24h-Lieferung europaweit möglich",
-      "Direktfahrt ohne Umschlag (Direkttransport)",
-      "Nacht- und Wochenendfahrten",
+      "Zustellung am selben Tag",
+      "Sonderfahrten auf Abruf",
+      "Abend- und Wochenendfahrten nach Absprache",
+      "Direkte Fahrt ohne Umweg",
       "Persönliche Auftragsbetreuung",
-      "Echtzeit-GPS-Tracking mit Live-Updates",
-      "Sicherheitstransporte für wertvolle Güter",
-      "Kurierdienst für kleine Sendungen",
-    ],
-  },
-  {
-    id: "lager",
-    label: "Lagerlogistik",
-    icon: "🏭",
-    color: "green",
-    headline: "Moderne Lagerhaltung und Warenmanagement auf 8.500 m²",
-    description: "Unsere modernen Lagerflächen in Wien bieten optimale Konditionen für Ihre Güter. Von der Einlagerung bis zur Kommissionierung und Distribution übernehmen wir alle Aufgaben — mit digitalem Warenmanagementsystem und vollständiger Rückverfolgbarkeit.",
-    features: [
-      "8.500 m² moderne Lagerfläche in Wien",
-      "Deckenhöhe bis 12 Meter",
-      "Digitales Warenmanagementsystem (WMS)",
-      "Einlagerung, Kommissionierung, Distribution",
-      "Kühl- und Tiefkühlbereiche vorhanden",
-      "Inventur und Bestandsführung",
-      "Cross-Docking und Umschlagsservice",
-      "Flexible Laufdauer (kurz- oder langfristig)",
+      "Feste Ansprechperson",
+      "Wien und Wien-Umgebung",
     ],
   },
   {
     id: "fahrzeuge",
-    label: "Fahrzeugtransporte",
+    label: "Abschleppdienst und Fahrzeugtransport",
     icon: "🚗",
     color: "blue",
-    headline: "Sicherer Transport von PKW, LKW und Sonderfahrzeugen",
-    description: "Ob Neuwagen für Händler, Flottenfahrzeuge für Unternehmen oder private PKW — MAGOTransport transportiert Ihre Fahrzeuge sicher, schonend und versichert auf spezialisierten Autotransportern.",
+    headline: "Autos abschleppen und transportieren",
+    description: "Mit unseren zwei großen Anhängern schleppen und transportieren wir Autos in Wien und Wien-Umgebung. In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage.",
     features: [
-      "Bis zu 8 PKW gleichzeitig",
-      "Offen- und Geschlossentransporter verfügbar",
-      "Vollkaskoversicherung für alle transportierten Fahrzeuge",
-      "Autohändler, Flotten, Privatkunden",
-      "Bestandsnahmefoto vor und nach Transport",
-      "LKW und Nutzfahrzeuge bis 12t",
-      "Oldtimer-Transport auf Anfrage (Spezialbehandlung)",
+      "Autos abschleppen und transportieren",
+      "Zwei große Anhänger",
+      "Sicher verzurrt",
+      "Wien und Wien-Umgebung",
+      "Transport ins Ausland nur auf Anfrage",
+      "Abstimmung von Termin und Ort",
     ],
   },
 ];
 
-const colorConf: Record<string, { badge: string; border: string }> = {
-  blue:   { badge: "text-blue-400 bg-blue-400/10 border-blue-400/20", border: "border-blue-500/20" },
-  purple: { badge: "text-purple-400 bg-purple-400/10 border-purple-400/20", border: "border-purple-500/20" },
-  amber:  { badge: "text-amber-400 bg-amber-400/10 border-amber-400/20", border: "border-amber-500/20" },
-  green:  { badge: "text-green-400 bg-green-400/10 border-green-400/20", border: "border-green-500/20" },
+const colorConf: Record<string, { badge: string }> = {
+  blue:   { badge: "text-blue-700 bg-blue-50 border-blue-100" },
+  purple: { badge: "text-indigo-700 bg-indigo-50 border-indigo-100" },
+  amber:  { badge: "text-amber-700 bg-amber-50 border-amber-100" },
+  green:  { badge: "text-emerald-700 bg-emerald-50 border-emerald-100" },
 };
 
 export default function LeistungenPage() {
@@ -117,39 +95,39 @@ export default function LeistungenPage() {
         badge="Unsere Leistungen"
         badgeColor="sky"
         orbColor="blue"
-        title={<>Transport & Logistik <span className="gradient-text">aus einer Hand</span></>}
-        description="Von nationalen Gütertransporten bis zum 24/7-Abschleppdienst — MAGOTransport bietet Ihnen das komplette Spektrum professioneller Transport- und Logistikdienstleistungen für Österreich und Europa."
+        title={<>Auslieferung und Abschleppdienst <span className="gradient-text">in Wien</span></>}
+        description="Wir liefern die Ware unserer Partnerunternehmen an deren Kunden aus. Dazu Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung."
       />
 
       <section className="py-20" aria-label="Leistungsübersicht">
-        <div className="max-w-6xl mx-auto px-6 space-y-16">
-          {leistungsGruppen.map((lg, i) => {
+        <div className="max-w-6xl mx-auto px-6 space-y-12">
+          {leistungsGruppen.map((lg) => {
             const cfg = colorConf[lg.color];
             return (
               <div id={lg.id} key={lg.id}><AnimatedSection>
-                <article className={`glass rounded-3xl p-8 md:p-10 border ${cfg.border} transition-all duration-300`}>
+                <article className="bg-white rounded-3xl p-8 md:p-10 border border-slate-200 shadow-soft transition-all duration-300">
                   <div className="grid md:grid-cols-5 gap-8">
                     <div className="md:col-span-2">
                       <span className="text-4xl mb-4 block" aria-hidden="true">{lg.icon}</span>
-                      <span className={`inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 glass rounded-full border mb-4 ${cfg.badge}`}>
+                      <span className={`inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border mb-4 ${cfg.badge}`}>
                         {lg.label}
                       </span>
-                      <h2 className="text-2xl font-bold text-white mb-3 leading-snug">{lg.headline}</h2>
-                      <p className="text-slate-400 text-sm leading-relaxed mb-5">{lg.description}</p>
+                      <h2 className="text-2xl font-bold text-slate-900 mb-3 leading-snug">{lg.headline}</h2>
+                      <p className="text-slate-600 text-sm leading-relaxed mb-5">{lg.description}</p>
                       <Link
                         href="/anfrage"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all cursor-pointer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary"
                       >
                         Anfrage stellen <ArrowRight className="w-4 h-4" aria-hidden="true" />
                       </Link>
                     </div>
                     <div className="md:col-span-3">
-                      <h3 className="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-4">Im Leistungsumfang enthalten:</h3>
+                      <h3 className="text-slate-500 text-xs font-semibold uppercase tracking-widest mb-4">Im Leistungsumfang enthalten</h3>
                       <ul className="grid sm:grid-cols-2 gap-2.5" role="list">
                         {lg.features.map((f) => (
                           <li key={f} className="flex items-start gap-2.5">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                            <span className="text-slate-300 text-sm">{f}</span>
+                            <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                            <span className="text-slate-700 text-sm">{f}</span>
                           </li>
                         ))}
                       </ul>
@@ -162,18 +140,17 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Notfall CTA */}
-      <section className="py-20 border-t border-white/8">
-        <GradientOrb color="blue" size="lg" className="-right-32 top-1/2 -translate-y-1/2 opacity-10" animate={false} />
+      {/* Notfall-CTA */}
+      <section className="py-20 border-t border-slate-200 bg-slate-50">
         <AnimatedSection className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Sofort Hilfe benötigt?</h2>
-          <p className="text-slate-400 mb-8">Bei Pannenhilfe, Unfallbergung oder dringenden Transporten: Unsere Notfall-Hotline ist rund um die Uhr besetzt.</p>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Auto abschleppen lassen?</h2>
+          <p className="text-slate-600 mb-8">Rufen Sie uns an. Wir schleppen Ihr Auto in Wien und Wien-Umgebung ab und besprechen Termin und Ort.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+43800626424" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold transition-all cursor-pointer glow-amber">
-              <Phone className="w-4 h-4" aria-hidden="true" />+43 800 626 424
+            <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold transition-all cursor-pointer shadow-cta">
+              <Phone className="w-4 h-4" aria-hidden="true" />+43 699 11147070
             </a>
-            <Link href="/anfrage" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl glass border border-white/12 text-white font-medium hover:border-white/25 transition-all cursor-pointer">
-              Angebot anfordern
+            <Link href="/anfrage" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-semibold hover:border-blue-200 hover:bg-blue-50 transition-all cursor-pointer shadow-soft">
+              Angebot anfragen
             </Link>
           </div>
         </AnimatedSection>

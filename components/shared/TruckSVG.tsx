@@ -28,9 +28,9 @@ export function TruckSVG({ className = "", width = 320 }: TruckSVGProps) {
 
       {/* MAGO-Branding */}
       <text x="106" y="44" textAnchor="middle" fill="#3B82F6" fontSize="22" fontWeight="800"
-        fontFamily="'DM Sans', sans-serif" letterSpacing="-0.5">MAGO</text>
+        fontFamily="system-ui, sans-serif" letterSpacing="-0.5">MAGO</text>
       <text x="106" y="58" textAnchor="middle" fill="#60A5FA" fontSize="7.5"
-        fontFamily="'DM Sans', sans-serif" letterSpacing="3.5">TRANSPORT</text>
+        fontFamily="system-ui, sans-serif" letterSpacing="3.5">TRANSPORT</text>
 
       {/* Hintere Tür */}
       <rect x="200" y="8" width="3" height="68" fill="#1D4ED8" />
