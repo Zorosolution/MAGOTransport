@@ -7,42 +7,34 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Häufige Fragen (FAQ)",
-  description: "Häufig gestellte Fragen zu MAGOTransport — Transporte, Preise, Abschleppdienst, Lagerlogistik und vieles mehr.",
+  description: "Häufig gestellte Fragen zu MAGOTransport: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
 };
 
 const faqs = [
   {
-    kategorie: "Transport & Logistik",
+    kategorie: "Auslieferung und Partnerschaft",
     items: [
-      { f: "In welche Länder liefert MAGOTransport?", a: "MAGOTransport transportiert national innerhalb Österreichs und Deutschlands sowie international in alle EU-Länder und darüber hinaus. Mit unserem Partnernetzwerk in über 30 Ländern erreichen wir nahezu jeden Zielort weltweit." },
-      { f: "Wie lange dauert ein nationaler Transport?", a: "Nationale Transporte innerhalb Österreichs werden in der Regel innerhalb von 24–48 Stunden abgewickelt. Expresslieferungen sind auch taggleich oder über Nacht möglich — bitte fragen Sie bei uns nach." },
-      { f: "Kann ich den Sendungsstatus verfolgen?", a: "Ja, alle Sendungen werden GPS-überwacht. Nach Auftragsbestätigung erhalten Sie einen Tracking-Link, über den Sie Ihre Sendung in Echtzeit verfolgen können." },
-      { f: "Transportieren Sie auch gefährliche Güter (ADR)?", a: "Ja, unsere Fahrer sind ADR-zertifiziert und wir verfügen über geeignete Fahrzeuge für den Transport von Gefahrgütern der Klassen 1–9. Bitte informieren Sie uns bei der Anfrage vollständig über Art und Menge der Güter." },
+      { f: "Was macht MAGOTransport genau?", a: "Wir sind Auslieferungspartner für andere Unternehmen. Wir fahren zum Lager des Partnerbetriebs, holen die Ware ab und liefern sie an dessen Kunden aus. Tätig sind wir in Wien und Wien-Umgebung." },
+      { f: "Betreiben Sie ein eigenes Lager?", a: "Nein. Ein eigenes Lager haben wir nicht. Wir holen die Ware im Lager unserer Partnerunternehmen ab und stellen sie an deren Kunden zu." },
+      { f: "Wo liefern Sie aus?", a: "Wir liefern in Wien und Wien-Umgebung aus. Ein größeres Gebiet oder Auslieferung außerhalb davon bieten wir nicht an." },
+      { f: "Wie wird man Partnerunternehmen?", a: "Schreiben Sie uns über das Kontaktformular oder rufen Sie an. Wir besprechen Lieferumfang, Gebiet und Abholzeiten. Wir arbeiten bereits mit Unternehmen zusammen und sind offen für neue Partnerschaften." },
     ],
   },
   {
-    kategorie: "Preise & Angebote",
+    kategorie: "Preise und Angebote",
     items: [
-      { f: "Wie erhalte ich ein Angebot?", a: "Ein Angebot erhalten Sie kostenlos und unverbindlich über unser Online-Anfrageformular, per E-Mail an office@magotransport.at oder telefonisch unter +43 800 626 424. Wir melden uns innerhalb von 24 Stunden mit einem detaillierten Angebot." },
-      { f: "Gibt es Festpreise oder wird nach Aufwand abgerechnet?", a: "Für Standardtransporte bieten wir Festpreise an. Bei Spezial- oder Sondertransporten werden die Kosten individuell nach Aufwand, Distanz und Güterart kalkuliert. Wir kommunizieren den Preis immer vorab transparent." },
-      { f: "Können Privatpersonen bei MAGOTransport bestellen?", a: "Ja, wir transportieren sowohl für Unternehmen als auch für Privatpersonen. Für private Fahrzeugbergungen und Abschleppdienste stehen wir 24/7 zur Verfügung." },
+      { f: "Wie erhalte ich ein Angebot?", a: "Ein Angebot erhalten Sie kostenlos und unverbindlich über unser Anfrageformular, per E-Mail an office@magotransport.at oder telefonisch unter +43 699 11147070. Wir melden uns mit einem Angebot." },
+      { f: "Gibt es Festpreise oder wird nach Aufwand abgerechnet?", a: "Das hängt vom Auftrag ab. Bei regelmäßiger Auslieferung vereinbaren wir feste Konditionen, beim Abschleppdienst nennen wir vorab einen Festpreis nach Strecke und Ziel. Den Preis nennen wir immer vorher." },
+      { f: "Können auch Privatpersonen anfragen?", a: "Die Auslieferung machen wir für Unternehmen. Beim Abschleppdienst und Fahrzeugtransport können sich auch Privatpersonen an uns wenden." },
     ],
   },
   {
-    kategorie: "Abschleppdienst & Pannenhilfe",
+    kategorie: "Abschleppdienst und Fahrzeugtransport",
     items: [
-      { f: "Wie schnell ist MAGOTransport bei einer Panne vor Ort?", a: "Unsere durchschnittliche Reaktionszeit beträgt 28 Minuten. Je nach Einsatzgebiet und Verfügbarkeit können wir in vielen Fällen noch schneller sein. Rufen Sie uns an: +43 800 626 424." },
-      { f: "Rechnet MAGOTransport mit meiner Versicherung ab?", a: "Ja, wir arbeiten mit allen gängigen Versicherungsunternehmen zusammen und können die Abrechnung direkt mit Ihrer Versicherung abwickeln. Halten Sie bei Ihrem Anruf Ihre Versicherungsdaten bereit." },
-      { f: "Welche Fahrzeuge können abgeschleppt werden?", a: "Wir schleppen PKW, Motorräder, Kleintransporter bis 3,5t und LKW bis 12t ab. Für schwerere Fahrzeuge stehen unsere Plateau-LKW zur Verfügung. Bitte nennen Sie uns bei der Kontaktaufnahme Fahrzeugtyp und Gewicht." },
-      { f: "Was kostet ein Abschleppvorgang?", a: "Die Kosten richten sich nach Fahrzeugtyp, Entfernung und Art der Bergung. Wir nennen Ihnen vor dem Einsatz immer einen transparenten Festpreis. Rufen Sie uns an und wir erstellen sofort eine Kostenschätzung." },
-    ],
-  },
-  {
-    kategorie: "Lagerlogistik",
-    items: [
-      { f: "Wie viel Lagerfläche bietet MAGOTransport?", a: "Unser Logistikzentrum in Wien verfügt über 8.500 m² moderne Lagerfläche mit einer Deckenhöhe von bis zu 12 Metern, inkl. Kühllager und Sicherheitsbereichen für wertvolle Güter." },
-      { f: "Für welche Güter eignet sich die Lagerung?", a: "Wir lagern Waren aller Art: Palettengüter, Stückgut, temperaturempfindliche Produkte (Kühllagerung vorhanden), Pharmaprodukte und Sondergüter. Nicht gelagert werden: explosive, radioaktive und besonders gefährliche Materialien (auf Anfrage besprechen)." },
-      { f: "Kann ich meine Güter kurzfristig einlagern?", a: "Ja, wir bieten flexible Laufzeiten ab einem Monat. Auch kurzfristige Zwischenlagerung im Rahmen von Transporten ist möglich. Sprechen Sie uns an — wir finden eine passende Lösung." },
+      { f: "Welche Fahrzeuge können Sie abschleppen?", a: "Wir schleppen und transportieren Autos. Dafür haben wir zwei große Anhänger und einen Abschlepp-Lkw. Nennen Sie uns bei der Anfrage den Fahrzeugtyp." },
+      { f: "Sind Sie auch außerhalb von Wien tätig?", a: "Wir sind in Wien und Wien-Umgebung unterwegs. In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage." },
+      { f: "Was kostet ein Abschleppvorgang?", a: "Die Kosten richten sich nach Strecke und Ziel. Wir nennen Ihnen vor dem Einsatz einen Festpreis. Rufen Sie uns an: +43 699 11147070." },
+      { f: "Wie läuft der Abschleppdienst ab?", a: "Sie rufen an und nennen uns Standort und Ziel. Wir kommen mit dem Anhänger, verladen das Auto sicher verzurrt und bringen es an den vereinbarten Ort." },
     ],
   },
 ];
@@ -74,15 +66,15 @@ export default function FAQPage() {
           <div className="space-y-12">
             {faqs.map((kat, ci) => (
               <AnimatedSection key={kat.kategorie} delay={ci * 0.1}>
-                <h2 className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-6 pb-3 border-b border-white/8">{kat.kategorie}</h2>
+                <h2 className="text-xs font-semibold text-blue-700 uppercase tracking-widest mb-6 pb-3 border-b border-slate-200">{kat.kategorie}</h2>
                 <div className="space-y-3">
                   {kat.items.map((item) => (
-                    <details key={item.f} className="group glass rounded-2xl border border-white/8 hover:border-white/15 transition-all duration-200">
-                      <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none text-white font-medium text-sm select-none">
+                    <details key={item.f} className="group bg-white rounded-2xl border border-slate-200 shadow-soft hover:border-blue-200 transition-all duration-200">
+                      <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none text-slate-900 font-medium text-sm select-none">
                         <span>{item.f}</span>
-                        <span className="flex-shrink-0 w-5 h-5 glass rounded-full flex items-center justify-center text-slate-400 group-open:text-white group-open:rotate-45 transition-all duration-200 border border-white/10 text-base leading-none">+</span>
+                        <span className="flex-shrink-0 w-5 h-5 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 group-open:text-blue-700 group-open:rotate-45 transition-all duration-200 border border-slate-200 text-base leading-none">+</span>
                       </summary>
-                      <div className="px-5 pb-5"><p className="text-slate-400 text-sm leading-relaxed">{item.a}</p></div>
+                      <div className="px-5 pb-5"><p className="text-slate-600 text-sm leading-relaxed">{item.a}</p></div>
                     </details>
                   ))}
                 </div>
@@ -90,15 +82,15 @@ export default function FAQPage() {
             ))}
           </div>
 
-          <AnimatedSection className="mt-14 glass rounded-2xl p-8 border border-white/8 text-center">
-            <h2 className="text-white font-semibold mb-2">Ihre Frage nicht dabei?</h2>
-            <p className="text-slate-400 text-sm mb-5">Kontaktieren Sie uns direkt — wir antworten in der Regel innerhalb weniger Stunden.</p>
+          <AnimatedSection className="mt-14 bg-white rounded-2xl p-8 border border-slate-200 shadow-soft text-center">
+            <h2 className="text-slate-900 font-semibold mb-2">Ihre Frage nicht dabei?</h2>
+            <p className="text-slate-600 text-sm mb-5">Kontaktieren Sie uns direkt. Wir antworten in der Regel innerhalb weniger Stunden.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/kontakt" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all cursor-pointer">
+              <Link href="/kontakt" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary">
                 Kontakt aufnehmen <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <a href="tel:+43800626424" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass border border-amber-500/30 text-amber-400 font-medium text-sm transition-all hover:bg-amber-500/10 cursor-pointer">
-                +43 800 626 424
+              <a href="tel:+4369911147070" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-amber-200 text-amber-700 font-semibold text-sm transition-all hover:bg-amber-50 cursor-pointer shadow-soft">
+                +43 699 11147070
               </a>
             </div>
           </AnimatedSection>

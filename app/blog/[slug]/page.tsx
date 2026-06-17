@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
     headline: post.title,
     description: post.excerpt,
     author: { "@type": "Person", name: post.author },
-    publisher: { "@type": "Organization", name: "NexusAI" },
+    publisher: { "@type": "Organization", name: "MAGOTransport" },
     datePublished: post.date,
   };
 
@@ -61,14 +61,14 @@ export default async function BlogPostPage({ params }: Props) {
         description={post.excerpt}
       />
 
-      <article className="py-16" aria-label="Blog post content">
+      <article className="py-16" aria-label="Beitragsinhalt">
         <div className="max-w-3xl mx-auto px-6">
-          {/* Meta bar */}
-          <AnimatedSection className="flex flex-wrap items-center gap-6 mb-10 pb-8 border-b border-white/8">
+          {/* Metaleiste */}
+          <AnimatedSection className="flex flex-wrap items-center gap-6 mb-10 pb-8 border-b border-slate-200">
             <div className="flex items-center gap-2.5">
               <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${post.avatarColor} text-white text-xs flex items-center justify-center font-bold`} aria-hidden="true">{post.avatar}</div>
               <div>
-                <p className="text-white text-sm font-medium">{post.author}</p>
+                <p className="text-slate-900 text-sm font-medium">{post.author}</p>
                 <p className="text-slate-500 text-xs">{post.authorRole}</p>
               </div>
             </div>
@@ -79,85 +79,92 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </AnimatedSection>
 
-          {/* Simulated article body */}
-          <AnimatedSection className="prose prose-invert prose-slate max-w-none">
-            <div className="space-y-5 text-slate-300 leading-relaxed">
+          {/* Beitragstext */}
+          <AnimatedSection className="max-w-none">
+            <div className="space-y-5 text-slate-700 leading-relaxed">
               <p>
-                <strong className="text-white">The landscape of AI automation has changed dramatically over the past 18 months.</strong>{" "}
-                What was once reserved for large engineering teams with deep AI expertise is now accessible to any organisation willing to invest in the right platform.
+                <strong className="text-slate-900">In der Auslieferung entscheiden klare Abläufe.</strong>{" "}
+                Wer die Ware anderer Betriebe an deren Kunden bringt, trägt Verantwortung für Termine
+                und für die letzte Strecke bis zur Tür. In diesem Beitrag fassen wir zusammen, worauf
+                es in der Praxis ankommt und wie MAGOTransport seine Touren täglich umsetzt.
               </p>
               <p>
-                In this guide, we&apos;ll walk through the core concepts, real-world patterns, and practical implementation strategies that separate production-grade automation from fragile proof-of-concepts.
-              </p>
-
-              <h2 className="text-2xl font-bold text-white mt-10 mb-4">Why most automation projects fail</h2>
-              <p>
-                The failure mode is almost always the same: teams start with simple, happy-path workflows and never design for failure. They build automations that work 90% of the time and break catastrophically the other 10%.
-              </p>
-              <p>
-                Production automation requires obsessive thinking about edge cases, failure modes, and recovery strategies. Every workflow needs to answer: what happens when this step fails?
+                Die Erwartungen an die Zustellung sind gestiegen. Engere Zeitfenster, mehr Stopps pro
+                Tour und der Wunsch nach einer Rückmeldung gehören heute zum Alltag. Gute Tourenplanung
+                und klare Absprachen mit dem Partnerbetrieb machen den Unterschied.
               </p>
 
-              <div className="glass rounded-2xl p-6 border border-sky-500/20 my-8">
-                <p className="text-sky-300 font-semibold mb-2">Key Insight</p>
-                <p className="text-slate-300 text-sm">The difference between a demo and a production system is not the happy path — it&apos;s everything else. Design for failure first, success second.</p>
+              <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Worauf es in der Praxis ankommt</h2>
+              <p>
+                Eine Tour ist nur so gut wie ihre Vorbereitung. Abholzeit im Lager, Reihenfolge der
+                Stopps und das Liefergebiet werden vorab abgestimmt. So lassen sich Verzögerungen
+                vermeiden, bevor sie entstehen.
+              </p>
+              <p>
+                Genauso wichtig ist die Rückmeldung. Wenn der Partnerbetrieb weiß, dass zugestellt
+                wurde, behält er den Überblick. Bei Rückfragen sind wir erreichbar.
+              </p>
+
+              <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 my-8">
+                <p className="text-blue-800 font-semibold mb-2">Auf den Punkt</p>
+                <p className="text-slate-700 text-sm">Der Unterschied zwischen einer reibungslosen und einer schwierigen Tour liegt selten an der Fahrt selbst, sondern an der Abstimmung davor. Wer vorausplant, gewinnt Zeit.</p>
               </div>
 
-              <h2 className="text-2xl font-bold text-white mt-10 mb-4">Core patterns for reliable automation</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Wie wir arbeiten</h2>
               <p>
-                After deploying thousands of automations across hundreds of industries, we&apos;ve identified a set of patterns that consistently produce reliable, maintainable systems.
-              </p>
-              <p>
-                These aren&apos;t theoretical concepts — they&apos;re battle-tested approaches we&apos;ve refined through real production incidents and customer feedback.
+                Seit 2007 liefern wir in Wien und Wien-Umgebung aus. Daraus haben sich einige Grundsätze
+                ergeben, die wir bei jeder Tour anwenden.
               </p>
 
-              <h3 className="text-xl font-bold text-white mt-8 mb-3">1. Idempotency by default</h3>
+              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-3">1. Tour vorausplanen</h3>
               <p>
-                Every action in your workflow should be safe to repeat. If a step fails and retries, running it twice should produce the same result as running it once.
+                Abholzeit, Reihenfolge der Stopps und Gebiet werden vorab geklärt, damit der Tag ohne
+                Umwege läuft.
               </p>
 
-              <h3 className="text-xl font-bold text-white mt-8 mb-3">2. Explicit state management</h3>
+              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-3">2. Rückmeldung geben</h3>
               <p>
-                Never rely on implicit state. Make every workflow state transition explicit, logged, and reversible. This enables debugging, auditing, and recovery.
+                Der Partnerbetrieb erfährt, dass zugestellt wurde. Ein fester Ansprechpartner sorgt für
+                Überblick.
               </p>
 
-              <h3 className="text-xl font-bold text-white mt-8 mb-3">3. Human-in-the-loop checkpoints</h3>
+              <h3 className="text-xl font-bold text-slate-900 mt-8 mb-3">3. Sorgfältig fahren</h3>
               <p>
-                Identify the decisions in your workflow that carry significant risk or uncertainty. Put human approval gates at these points — not everywhere, but exactly where they matter.
+                Gewartete Fahrzeuge, ortskundige Fahrer und korrekt gesicherte Ladung. Das schützt die
+                Ware und alle auf der Straße.
               </p>
 
-              <h2 className="text-2xl font-bold text-white mt-10 mb-4">Getting started</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Wie MAGOTransport unterstützt</h2>
               <p>
-                The best way to learn production automation is to build something real, with real consequences, and iterate. Start with a workflow that&apos;s manual, painful, and repetitive — that&apos;s your first automation candidate.
-              </p>
-              <p>
-                Book a demo with our team and we&apos;ll walk through your specific workflows and identify the highest-value automation opportunities.
+                Ob Auslieferung für Ihren Betrieb, Abschleppdienst oder Fahrzeugtransport: Wir sind in
+                Wien und Wien-Umgebung für Sie unterwegs. Sprechen Sie uns an, wir melden uns mit einem
+                Angebot.
               </p>
             </div>
           </AnimatedSection>
 
           {/* CTA */}
-          <AnimatedSection className="mt-12 glass rounded-2xl p-8 border border-white/10 text-center">
-            <p className="text-white font-semibold mb-2">Ready to put this into practice?</p>
-            <p className="text-slate-400 text-sm mb-5">Book a free 30-minute session with our automation experts and get a custom plan for your workflows.</p>
-            <Link href="/booking" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm transition-all cursor-pointer">
-              Book a session <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          <AnimatedSection className="mt-12 bg-white rounded-2xl p-8 border border-slate-200 shadow-soft text-center">
+            <p className="text-slate-900 font-semibold mb-2">Sollen wir Ihren nächsten Transport übernehmen?</p>
+            <p className="text-slate-600 text-sm mb-5">Fordern Sie ein kostenloses Angebot an. Wir melden uns zeitnah bei Ihnen.</p>
+            <Link href="/anfrage" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all cursor-pointer shadow-primary">
+              Angebot anfragen <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </AnimatedSection>
 
-          {/* Back + related */}
-          <AnimatedSection className="mt-10 pt-8 border-t border-white/8">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-slate-500 hover:text-white text-sm transition-colors cursor-pointer mb-8">
-              <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Back to Blog
+          {/* Zurück + verwandte Beiträge */}
+          <AnimatedSection className="mt-10 pt-8 border-t border-slate-200">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-900 text-sm transition-colors cursor-pointer mb-8">
+              <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Zurück zur Übersicht
             </Link>
             {related.length > 0 && (
               <div>
-                <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-4">Related Articles</p>
+                <p className="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-4">Ähnliche Beiträge</p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {related.map((r) => (
-                    <Link key={r.slug} href={`/blog/${r.slug}`} className="group glass rounded-xl p-4 border border-white/8 hover:border-white/18 transition-all cursor-pointer block">
-                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${r.categoryColor} mb-2 inline-block`}>{r.category}</span>
-                      <p className="text-white text-sm font-medium leading-snug group-hover:text-sky-300 transition-colors">{r.title}</p>
+                    <Link key={r.slug} href={`/blog/${r.slug}`} className="group bg-white rounded-xl p-4 border border-slate-200 shadow-soft hover:border-blue-200 transition-all cursor-pointer block">
+                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${r.categoryColor} mb-2 inline-block`}>{r.category}</span>
+                      <p className="text-slate-900 text-sm font-medium leading-snug group-hover:text-blue-700 transition-colors">{r.title}</p>
                     </Link>
                   ))}
                 </div>

@@ -1,152 +1,170 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { GradientOrb } from "@/components/shared/GradientOrb";
-import { AnimatedTruck } from "@/components/shared/TruckSVG";
-import { ArrowRight, Phone, Shield, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Phone, ShieldCheck, MapPin, Truck } from "lucide-react";
 import Link from "next/link";
 
 const trustBadges = [
-  { icon: Shield, text: "15+ Jahre Erfahrung" },
-  { icon: Clock, text: "24/7 Einsatzbereit" },
-  { icon: MapPin, text: "Österreich & Europa" },
+  { icon: ShieldCheck, text: "Seit 2007 im Einsatz" },
+  { icon: MapPin, text: "Wien und Wien-Umgebung" },
+  { icon: Truck, text: "Eigener Fuhrpark" },
 ];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
-  const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
+  // Sparsamer Parallax nur auf dem Hero-Bild (deaktiviert bei prefers-reduced-motion)
+  const imgYRaw = useTransform(scrollYProgress, [0, 1], [0, 70]);
+  const chipYRaw = useTransform(scrollYProgress, [0, 1], [0, -28]);
+  const imgY = reduceMotion ? undefined : imgYRaw;
+  const chipY = reduceMotion ? undefined : chipYRaw;
+
+  const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } } };
   const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
   };
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-8"
-      aria-label="Hero – MAGOTransport"
+      className="relative overflow-hidden pt-28 lg:pt-36 pb-16 lg:pb-28"
+      aria-label="MAGOTransport Startseite"
     >
-      {/* Hintergrund */}
-      <div className="absolute inset-0 grid-pattern" aria-hidden="true" />
+      {/* Heller Hintergrund mit feinem Raster und sanftem Blauschimmer */}
+      <div className="absolute inset-0 grid-pattern radial-fade" aria-hidden="true" />
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% -5%, rgba(29,78,216,0.18) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 70% 50% at 70% -5%, rgba(29,78,216,0.10) 0%, transparent 70%)" }}
         aria-hidden="true"
       />
-      <GradientOrb color="blue" size="xl" className="-top-32 left-1/2 -translate-x-1/2" />
-      <GradientOrb color="purple" size="md" className="top-1/3 -left-24 opacity-15" />
+      <GradientOrb color="blue" size="xl" className="-top-48 right-0 translate-x-1/4" animate />
 
-      {/* Hauptinhalt */}
-      <motion.div style={{ y, opacity }} className="relative z-10 max-w-6xl mx-auto px-6 w-full">
-        <motion.div variants={containerVariants} initial="hidden" animate="visible">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 items-center">
 
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <div className="inline-flex items-center gap-2 glass border border-blue-500/25 rounded-full px-4 py-2">
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
-              <span className="text-xs text-slate-300 font-medium">Zuverlässiger Transportpartner seit über 15 Jahren</span>
-            </div>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] mb-6 max-w-4xl"
-          >
-            <span className="text-white">Ihr verlässlicher Partner für</span>
-            <br />
-            <span className="gradient-text">Transport & Logistik</span>
-          </motion.h1>
-
-          {/* Subheadline */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg sm:text-xl text-slate-400 max-w-2xl mb-4 leading-relaxed"
-          >
-            Nationale und internationale Gütertransporte. Professionelle Logistiklösungen.
-            Abschleppdienst und Pannenhilfe — <strong className="text-white">rund um die Uhr</strong>.
-          </motion.p>
-
-          {/* Trust Badges */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
-            {trustBadges.map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-1.5 text-sm text-slate-400">
-                <Icon className="w-4 h-4 text-blue-400" aria-hidden="true" />
-                <span>{text}</span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* CTA-Zeile */}
+          {/* Textspalte */}
           <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <Link
-              href="/anfrage"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-[15px] transition-all duration-200 shadow-lg shadow-blue-900/40 hover:shadow-blue-700/40 hover:scale-[1.02] cursor-pointer"
-            >
-              Angebot anfordern
-              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
-            </Link>
-            <a
-              href="tel:+43800626424"
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-2xl border border-amber-500/40 bg-amber-500/10 text-amber-300 font-semibold text-[15px] hover:bg-amber-500/20 transition-all duration-200 cursor-pointer hover:scale-[1.02] glow-amber"
-              aria-label="Notfall-Hotline anrufen"
-            >
-              <Phone className="w-4 h-4" aria-hidden="true" />
-              24h Notfall: +43 800 626 424
-            </a>
-          </motion.div>
-
-          {/* Kennzahlen */}
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl"
-          >
-            {[
-              { value: "500+", label: "Transporte täglich" },
-              { value: "15+", label: "Jahre Erfahrung" },
-              { value: "98,9%", label: "Zuverlässigkeit" },
-              { value: "24/7", label: "Einsatzbereit" },
-            ].map(({ value, label }) => (
-              <div key={label} className="glass rounded-xl p-3.5 text-center border border-white/6">
-                <div className="text-xl font-bold gradient-text">{value}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+            <motion.div variants={itemVariants} className="mb-6">
+              <div className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 shadow-soft">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+                <span className="text-xs text-slate-700 font-medium">Auslieferungspartner in Wien seit 2007</span>
               </div>
-            ))}
+            </motion.div>
+
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-slate-900 text-balance"
+            >
+              Wir liefern die Ware Ihrer Firma{" "}
+              <span className="gradient-text">an Ihre Kunden aus</span>
+            </motion.h1>
+
+            <motion.p
+              variants={itemVariants}
+              className="text-lg sm:text-xl text-slate-600 max-w-xl mb-8 leading-relaxed"
+            >
+              Wir holen die Ware im Lager Ihres Unternehmens ab und stellen sie an Ihre Kunden zu.
+              Dazu Abschleppdienst und Fahrzeugtransport. In Wien und Wien-Umgebung.
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-center gap-3 mb-9 w-full sm:w-auto"
+            >
+              <Link
+                href="/anfrage"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-[15px] transition-all duration-200 shadow-primary hover:-translate-y-0.5 active:translate-y-0 cursor-pointer w-full sm:w-auto"
+              >
+                Angebot anfragen
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+              <a
+                href="tel:+4369911147070"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl border border-slate-200 bg-white text-slate-900 font-semibold text-[15px] hover:border-blue-200 hover:bg-blue-50 transition-all duration-200 cursor-pointer w-full sm:w-auto"
+              >
+                <Phone className="w-4 h-4 text-blue-700" aria-hidden="true" />
+                +43 699 11147070
+              </a>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2.5">
+              {trustBadges.map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-center gap-1.5 text-sm text-slate-600">
+                  <Icon className="w-4 h-4 text-blue-700" aria-hidden="true" />
+                  <span>{text}</span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </motion.div>
 
-      {/* Straßen- & LKW-Animation */}
-      <div className="relative z-10 mt-auto" aria-hidden="true">
-        {/* Straße */}
-        <div className="relative mx-auto max-w-7xl px-0">
-          <div className="relative h-16 overflow-hidden">
-            {/* Asphalt */}
-            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-b from-transparent to-slate-900/60" />
-            {/* Leitlinie */}
-            <div className="absolute bottom-3 left-0 right-0 h-0.5 road-dash opacity-40" />
-            {/* Randlinie */}
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-500/30" />
+          {/* Bildspalte mit sanfter Einblendung und Parallax */}
+          <motion.div
+            initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="relative"
+          >
+            <motion.div style={{ y: imgY }} className="relative">
+              <div className="relative rounded-[28px] overflow-hidden border border-slate-200 bg-white shadow-soft-lg">
+                {/*
+                  Platzhalter: public/hero-lkw.svg durch ein echtes Foto eines Lkw ersetzen
+                  (z. B. /hero-lkw.jpg) und src unten anpassen. Helles Motiv, Format 4:3.
+                */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/hero-lkw.svg"
+                  alt="MAGOTransport Lkw für Auslieferung in Wien und Wien-Umgebung"
+                  width={1200}
+                  height={900}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-auto block aspect-[4/3] object-cover"
+                />
+                {/* Einmaliger Lichtstreif beim Laden, vom Containerrand sauber beschnitten */}
+                <div
+                  className="absolute inset-0 pointer-events-none shine-sweep"
+                  style={{ background: "linear-gradient(105deg, transparent 32%, rgba(255,255,255,0.55) 50%, transparent 68%)" }}
+                  aria-hidden="true"
+                />
+              </div>
 
-            {/* Animierter LKW */}
-            <div className="absolute bottom-1 left-0 right-0">
-              <AnimatedTruck className="h-14" />
-            </div>
-          </div>
+              {/* Seltener Glas-Akzent, nicht über Fließtext */}
+              <motion.div
+                style={{ y: chipY }}
+                className="absolute -bottom-4 -left-3 sm:left-5 glass rounded-2xl px-4 py-3 shadow-soft-lg"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-blue-700 flex items-center justify-center" aria-hidden="true">
+                    <Truck className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="leading-tight">
+                    <p className="text-slate-900 text-sm font-bold">15 Lkw, 2 Anhänger</p>
+                    <p className="text-slate-500 text-xs">täglich im Einsatz</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                style={{ y: chipY }}
+                className="absolute -top-4 right-4 sm:right-6 hidden sm:flex glass rounded-full px-4 py-2 shadow-soft items-center gap-2"
+              >
+                <MapPin className="w-4 h-4 text-blue-700" aria-hidden="true" />
+                <span className="text-slate-900 text-xs font-semibold">Wien und Wien-Umgebung</span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-
-        {/* Überblendung nach unten */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"
-        />
       </div>
     </section>
   );

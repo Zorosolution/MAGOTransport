@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface GradientOrbProps {
@@ -10,11 +10,12 @@ interface GradientOrbProps {
   animate?: boolean;
 }
 
+// Sehr dezente, helle Farbschleier – Premium-Mesh à la Stripe, kein Neon
 const colorMap = {
-  blue: "bg-sky-500",
-  orange: "bg-orange-500",
-  purple: "bg-purple-500",
-  green: "bg-green-500",
+  blue: "bg-blue-400",
+  orange: "bg-amber-300",
+  purple: "bg-indigo-300",
+  green: "bg-emerald-300",
 };
 
 const sizeMap = {
@@ -28,29 +29,22 @@ export function GradientOrb({
   className,
   color = "blue",
   size = "lg",
-  animate = true,
+  animate = false,
 }: GradientOrbProps) {
+  const reduceMotion = useReducedMotion();
+  const shouldAnimate = animate && !reduceMotion;
+
   return (
     <motion.div
+      aria-hidden="true"
       className={cn(
-        "absolute rounded-full blur-3xl opacity-20 pointer-events-none",
+        "absolute rounded-full blur-3xl opacity-[0.12] pointer-events-none",
         colorMap[color],
         sizeMap[size],
         className
       )}
-      animate={
-        animate
-          ? {
-              scale: [1, 1.08, 1],
-              opacity: [0.15, 0.22, 0.15],
-            }
-          : undefined
-      }
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
+      animate={shouldAnimate ? { scale: [1, 1.06, 1] } : undefined}
+      transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
     />
   );
 }

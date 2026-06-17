@@ -1,134 +1,117 @@
 "use client";
 
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { GradientOrb } from "@/components/shared/GradientOrb";
+import { CountUp } from "@/components/shared/CountUp";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const fahrzeuge = [
   {
-    type: "Sattelzug",
-    count: "12",
-    capacity: "bis 24t",
-    desc: "Moderne Sattelzüge für großvolumige und schwere Gütertransporte europaweit.",
+    type: "Große Lkw",
+    count: "4",
+    capacity: "für größere Mengen",
+    desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.",
     color: "blue",
-    specs: ["Euro 6 Motor", "GPS-Tracking", "Temperaturüberwachung"],
+    specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und Umgebung"],
     icon: "🚛",
   },
   {
-    type: "Kastenwagen",
-    count: "8",
-    capacity: "bis 3,5t",
-    desc: "Flexible Kastenwagen für Expresslieferungen, Stückgut und Kurierdienste.",
+    type: "Kleine Lkw",
+    count: "10",
+    capacity: "für die Zustellung",
+    desc: "Zehn kleine Lkw für die wendige Zustellung in der Stadt und im Umland, mit vielen Stopps pro Tour.",
     color: "purple",
-    specs: ["Cargo-Zertifiziert", "Tagesmiete möglich", "Stadtlogistik"],
+    specs: ["Wendig im Stadtverkehr", "Tägliche Touren", "Zustellung beim Endkunden"],
     icon: "🚐",
   },
   {
-    type: "Abschleppfahrzeug",
-    count: "6",
-    capacity: "bis 12t",
-    desc: "Spezialisierte Abschleppfahrzeuge für PKW, LKW und Sonderfahrzeuge.",
+    type: "Abschlepp-Lkw",
+    count: "1",
+    capacity: "für Pannen und Unfälle",
+    desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
     color: "amber",
-    specs: ["24/7 Bereitschaft", "ADAC-Partner", "Unfallbergung"],
+    specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und Umgebung"],
     icon: "🏗️",
   },
   {
-    type: "Kühltransporter",
-    count: "4",
-    capacity: "-25°C bis +25°C",
-    desc: "Zertifizierte Kühltransporter für Lebensmittel, Pharma und temperaturempfindliche Güter.",
+    type: "Große Anhänger",
+    count: "2",
+    capacity: "für Autotransporte",
+    desc: "Zwei große Anhänger, mit denen wir Autos abschleppen und transportieren. Auf Anfrage auch ins Ausland.",
     color: "green",
-    specs: ["ATP-Zertifiziert", "Temp.-Protokoll", "HACCP-konform"],
-    icon: "❄️",
-  },
-  {
-    type: "Autotransporter",
-    count: "3",
-    capacity: "bis 8 PKW",
-    desc: "Professionelle Autotransporter für Händler, Flotten und Privatpersonen.",
-    color: "blue",
-    specs: ["Allwettertauglich", "Sicher verzurrt", "Versichert"],
+    specs: ["Autos transportieren", "Sicher verzurrt", "Ausland auf Anfrage"],
     icon: "🚗",
-  },
-  {
-    type: "Plateau-LKW",
-    count: "5",
-    capacity: "bis 20t",
-    desc: "Plateaufahrzeuge für Schwertransporte, Maschinen und Baumaterial.",
-    color: "purple",
-    specs: ["Begleitfahrzeug möglich", "Genehmigungsservice", "Hydraulikhebearm"],
-    icon: "⚙️",
   },
 ];
 
 const colorConf: Record<string, { border: string; badge: string; count: string }> = {
-  blue:   { border: "border-blue-500/25 hover:border-blue-500/50",   badge: "bg-blue-500/10 text-blue-400 border-blue-500/20",   count: "text-blue-400" },
-  purple: { border: "border-purple-500/25 hover:border-purple-500/50", badge: "bg-purple-500/10 text-purple-400 border-purple-500/20", count: "text-purple-400" },
-  amber:  { border: "border-amber-500/25 hover:border-amber-500/50",  badge: "bg-amber-500/10 text-amber-400 border-amber-500/20",  count: "text-amber-400" },
-  green:  { border: "border-green-500/25 hover:border-green-500/50",  badge: "bg-green-500/10 text-green-400 border-green-500/20",  count: "text-green-400" },
+  blue:   { border: "border-slate-200 hover:border-blue-200",   badge: "bg-blue-50 text-blue-700 border-blue-100",       count: "text-blue-700" },
+  purple: { border: "border-slate-200 hover:border-indigo-200", badge: "bg-indigo-50 text-indigo-700 border-indigo-100", count: "text-indigo-700" },
+  amber:  { border: "border-slate-200 hover:border-amber-200",  badge: "bg-amber-50 text-amber-700 border-amber-100",    count: "text-amber-700" },
+  green:  { border: "border-slate-200 hover:border-emerald-200", badge: "bg-emerald-50 text-emerald-700 border-emerald-100", count: "text-emerald-700" },
 };
 
 export function Fuhrpark() {
   return (
-    <section id="fuhrpark" className="relative py-28 overflow-hidden" aria-labelledby="fuhrpark-heading">
-      <GradientOrb color="blue" size="xl" className="-left-48 top-1/2 -translate-y-1/2 opacity-10" animate={false} />
-
+    <section id="fuhrpark" className="relative py-28 overflow-hidden bg-slate-50 border-y border-slate-200" aria-labelledby="fuhrpark-heading">
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
-          <span className="inline-block text-xs font-semibold text-blue-400 uppercase tracking-widest mb-4 px-3 py-1 glass rounded-full border border-blue-500/20">
+          <span className="inline-block text-xs font-semibold text-blue-700 uppercase tracking-widest mb-4 px-3 py-1 bg-blue-50 rounded-full border border-blue-100">
             Unser Fuhrpark
           </span>
-          <h2 id="fuhrpark-heading" className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-5">
-            Moderne Fahrzeugflotte –{" "}
-            <span className="gradient-text">für jeden Transport</span>
+          <h2 id="fuhrpark-heading" className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-5">
+            Unser Fuhrpark{" "}
+            <span className="gradient-text">für Wien und Umgebung</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            Unsere Flotte von über 38 modernen Fahrzeugen ist täglich im Einsatz — von der Expresslieferung
-            bis zum Schwertransport. Alle Fahrzeuge GPS-überwacht und regelmäßig gewartet.
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            Wir fahren mit 15 Lkw und zwei großen Anhängern. Die Lkw sind täglich für die
+            Auslieferung im Einsatz, mit den Anhängern transportieren und schleppen wir Autos.
+            Alle Fahrzeuge werden regelmäßig gewartet.
           </p>
         </AnimatedSection>
 
-        {/* Gesamt-Statistik */}
+        {/* Gesamtstatistik */}
         <AnimatedSection className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-10">
           {[
-            { value: "38+", label: "Fahrzeuge" },
-            { value: "24t", label: "Max. Nutzlast" },
-            { value: "100%", label: "GPS-überwacht" },
-            { value: "Euro 6", label: "Abgasnorm" },
-            { value: "24/7", label: "Verfügbar" },
-            { value: "DACH", label: "Einsatzgebiet" },
-          ].map(({ value, label }) => (
-            <div key={label} className="glass rounded-xl p-3 text-center border border-white/6">
-              <div className="text-lg font-bold gradient-text">{value}</div>
-              <div className="text-xs text-slate-600 mt-0.5">{label}</div>
+            { num: 15, label: "Lkw" },
+            { num: 4, label: "Große Lkw" },
+            { num: 10, label: "Kleine Lkw" },
+            { num: 1, label: "Abschlepp-Lkw" },
+            { num: 2, label: "Große Anhänger" },
+            { text: "Wien", label: "Einsatzgebiet" },
+          ].map(({ num, text, label }) => (
+            <div key={label} className="bg-white rounded-xl p-3 text-center border border-slate-200 shadow-soft transition-transform duration-300 hover:-translate-y-0.5">
+              <div className="text-lg font-bold text-blue-700 tabular-nums">
+                {typeof num === "number" ? <CountUp end={num} duration={1.6} /> : text}
+              </div>
+              <div className="text-xs text-slate-500 mt-0.5">{label}</div>
             </div>
           ))}
         </AnimatedSection>
 
-        {/* Fahrzeug-Karten */}
+        {/* Fahrzeugkarten */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {fahrzeuge.map((f, i) => {
             const cfg = colorConf[f.color];
             return (
-              <AnimatedSection key={f.type} delay={i * 0.08}>
-                <article className={`group glass rounded-2xl p-6 border ${cfg.border} transition-all duration-300 cursor-default h-full`}>
-                  {/* Header */}
+              <AnimatedSection key={f.type} delay={i * 0.07}>
+                <article className={`group bg-white rounded-2xl p-6 border ${cfg.border} shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 h-full`}>
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <span className="text-3xl mb-2 block" aria-hidden="true">{f.icon}</span>
-                      <h3 className="text-white font-semibold text-lg">{f.type}</h3>
+                      <h3 className="text-slate-900 font-semibold text-lg">{f.type}</h3>
                       <p className="text-slate-500 text-xs">{f.capacity}</p>
                     </div>
                     <div className="text-right">
-                      <span className={`text-2xl font-bold ${cfg.count}`}>{f.count}×</span>
-                      <p className="text-slate-600 text-xs">Fahrzeuge</p>
+                      <span className={`text-2xl font-bold tabular-nums ${cfg.count}`}>
+                        <CountUp end={Number(f.count)} duration={1.6} suffix="×" />
+                      </span>
+                      <p className="text-slate-500 text-xs">{f.type === "Große Anhänger" ? "Anhänger" : "Fahrzeuge"}</p>
                     </div>
                   </div>
 
-                  <p className="text-slate-400 text-sm leading-relaxed mb-4">{f.desc}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{f.desc}</p>
 
-                  {/* Specs */}
                   <div className="flex flex-wrap gap-1.5">
                     {f.specs.map((spec) => (
                       <span key={spec} className={`text-xs px-2.5 py-1 rounded-full border ${cfg.badge}`}>{spec}</span>
@@ -143,7 +126,7 @@ export function Fuhrpark() {
         <AnimatedSection className="text-center mt-10">
           <Link
             href="/fuhrpark"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 font-semibold text-sm transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-200 text-blue-700 hover:border-blue-200 hover:bg-blue-50 font-semibold text-sm transition-all duration-200 cursor-pointer shadow-soft"
           >
             Fuhrpark im Detail ansehen <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>

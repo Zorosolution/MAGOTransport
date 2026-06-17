@@ -6,10 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/booking/confirmation", "/api/"],
+        disallow: ["/anfrage/bestaetigung"],
       },
     ],
-    sitemap: "https://nexusai.com/sitemap.xml",
-    host: "https://nexusai.com",
+    sitemap: "https://magotransport.at/sitemap.xml",
+    host: "https://magotransport.at",
   };
 }
