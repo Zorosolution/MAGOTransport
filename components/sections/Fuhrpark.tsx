@@ -3,7 +3,12 @@
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { CountUp } from "@/components/shared/CountUp";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import imgGrosseLkw from "../../public/mago_claude_ready_v2/06_iveco_blue_yellow_side.jpg";
+import imgKleineLkw from "../../public/mago_claude_ready_v2/09_mercedes_boxvan_single.jpg";
+import imgAbschlepp from "../../public/mago_claude_ready_v2/01_hero_abschleppwagen_gelb.jpg";
+import imgAnhaenger from "../../public/mago_claude_ready_v2/03_pickup_trailer_transport.jpg";
 
 const fahrzeuge = [
   {
@@ -13,7 +18,7 @@ const fahrzeuge = [
     desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.",
     color: "blue",
     specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und Umgebung"],
-    icon: "🚛",
+    img: imgGrosseLkw,
   },
   {
     type: "Kleine Lkw",
@@ -22,7 +27,7 @@ const fahrzeuge = [
     desc: "Zehn kleine Lkw für die wendige Zustellung in der Stadt und im Umland, mit vielen Stopps pro Tour.",
     color: "purple",
     specs: ["Wendig im Stadtverkehr", "Tägliche Touren", "Zustellung beim Endkunden"],
-    icon: "🚐",
+    img: imgKleineLkw,
   },
   {
     type: "Abschlepp-Lkw",
@@ -31,7 +36,7 @@ const fahrzeuge = [
     desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
     color: "amber",
     specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und Umgebung"],
-    icon: "🏗️",
+    img: imgAbschlepp,
   },
   {
     type: "Große Anhänger",
@@ -40,7 +45,7 @@ const fahrzeuge = [
     desc: "Zwei große Anhänger, mit denen wir Autos abschleppen und transportieren. Auf Anfrage auch ins Ausland.",
     color: "green",
     specs: ["Autos transportieren", "Sicher verzurrt", "Ausland auf Anfrage"],
-    icon: "🚗",
+    img: imgAnhaenger,
   },
 ];
 
@@ -95,27 +100,38 @@ export function Fuhrpark() {
             const cfg = colorConf[f.color];
             return (
               <AnimatedSection key={f.type} delay={i * 0.07}>
-                <article className={`group bg-white rounded-2xl p-6 border ${cfg.border} shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 h-full`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <span className="text-3xl mb-2 block" aria-hidden="true">{f.icon}</span>
-                      <h3 className="text-slate-900 font-semibold text-lg">{f.type}</h3>
-                      <p className="text-slate-500 text-xs">{f.capacity}</p>
-                    </div>
-                    <div className="text-right">
-                      <span className={`text-2xl font-bold tabular-nums ${cfg.count}`}>
-                        <CountUp end={Number(f.count)} duration={1.6} suffix="×" />
-                      </span>
-                      <p className="text-slate-500 text-xs">{f.type === "Große Anhänger" ? "Anhänger" : "Fahrzeuge"}</p>
-                    </div>
+                <article className={`group bg-white rounded-2xl overflow-hidden border ${cfg.border} shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 h-full flex flex-col`}>
+                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                    <Image
+                      src={f.img}
+                      alt={`${f.type} von MAGOTransport`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                      placeholder="blur"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-slate-900 font-semibold text-lg">{f.type}</h3>
+                        <p className="text-slate-500 text-xs">{f.capacity}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className={`text-2xl font-bold tabular-nums ${cfg.count}`}>
+                          <CountUp end={Number(f.count)} duration={1.6} suffix="×" />
+                        </span>
+                        <p className="text-slate-500 text-xs">{f.type === "Große Anhänger" ? "Anhänger" : "Fahrzeuge"}</p>
+                      </div>
+                    </div>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{f.desc}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{f.desc}</p>
 
-                  <div className="flex flex-wrap gap-1.5">
-                    {f.specs.map((spec) => (
-                      <span key={spec} className={`text-xs px-2.5 py-1 rounded-full border ${cfg.badge}`}>{spec}</span>
-                    ))}
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {f.specs.map((spec) => (
+                        <span key={spec} className={`text-xs px-2.5 py-1 rounded-full border ${cfg.badge}`}>{spec}</span>
+                      ))}
+                    </div>
                   </div>
                 </article>
               </AnimatedSection>

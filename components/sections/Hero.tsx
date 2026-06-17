@@ -2,9 +2,11 @@
 
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { GradientOrb } from "@/components/shared/GradientOrb";
 import { ArrowRight, Phone, ShieldCheck, MapPin, Truck } from "lucide-react";
 import Link from "next/link";
+import heroImg from "../../public/mago_claude_ready_v2/10_mercedes_boxvan_countryside.jpg";
 
 const trustBadges = [
   { icon: ShieldCheck, text: "Seit 2007 im Einsatz" },
@@ -115,21 +117,15 @@ export function Hero() {
             className="relative"
           >
             <motion.div style={{ y: imgY }} className="relative">
-              <div className="relative rounded-[28px] overflow-hidden border border-slate-200 bg-white shadow-soft-lg">
-                {/*
-                  Platzhalter: public/hero-lkw.svg durch ein echtes Foto eines Lkw ersetzen
-                  (z. B. /hero-lkw.jpg) und src unten anpassen. Helles Motiv, Format 4:3.
-                */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/hero-lkw.svg"
-                  alt="MAGOTransport Lkw für Auslieferung in Wien und Wien-Umgebung"
-                  width={1200}
-                  height={900}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-full h-auto block aspect-[4/3] object-cover"
+              <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden border border-slate-200 bg-white shadow-soft-lg">
+                <Image
+                  src={heroImg}
+                  alt="Kastenwagen von MAGOTransport für die Auslieferung in Wien und Wien-Umgebung"
+                  fill
+                  priority
+                  placeholder="blur"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  className="object-cover"
                 />
                 {/* Einmaliger Lichtstreif beim Laden, vom Containerrand sauber beschnitten */}
                 <div
