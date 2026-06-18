@@ -10,7 +10,7 @@ import heroImg from "../../public/mago_claude_ready_v2/10_mercedes_boxvan_countr
 
 const trustBadges = [
   { icon: ShieldCheck, text: "Seit 2007 im Einsatz" },
-  { icon: MapPin, text: "Wien und Wien-Umgebung" },
+  { icon: MapPin, text: "Wien und ganz Österreich" },
   { icon: Truck, text: "Eigener Fuhrpark" },
 ];
 
@@ -65,7 +65,7 @@ export function Hero() {
               style={{ animationDelay: "0.12s" }}
             >
               Wir holen die Ware im Lager Ihres Unternehmens ab und stellen sie an Ihre Kunden zu.
-              Dazu Abschleppdienst und Fahrzeugtransport. In Wien und Wien-Umgebung.
+              Dazu Abschleppdienst und Fahrzeugtransport. In Wien und ganz Österreich.
             </p>
 
             <div
@@ -109,7 +109,7 @@ export function Hero() {
               <div className="relative aspect-[4/3] rounded-[28px] overflow-hidden border border-slate-200 bg-white shadow-soft-lg">
                 <Image
                   src={heroImg}
-                  alt="Kastenwagen von MAGOTransport für die Auslieferung in Wien und Wien-Umgebung"
+                  alt="Kastenwagen von MAGOTransport für die Auslieferung in Wien und ganz Österreich"
                   fill
                   priority
                   placeholder="blur"
@@ -145,7 +145,7 @@ export function Hero() {
                 className="absolute -top-4 right-4 sm:right-6 hidden sm:flex glass rounded-full px-4 py-2 shadow-soft items-center gap-2"
               >
                 <MapPin className="w-4 h-4 text-blue-700" aria-hidden="true" />
-                <span className="text-slate-900 text-xs font-semibold">Wien und Wien-Umgebung</span>
+                <span className="text-slate-900 text-xs font-semibold">Wien und ganz Österreich</span>
               </motion.div>
             </motion.div>
           </motion.div>

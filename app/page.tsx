@@ -17,7 +17,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": "https://magotransport.at",
   name: "MAGOTransport GmbH",
-  description: "Auslieferungspartner aus Wien. Wir holen Ware im Lager von Partnerunternehmen ab und stellen sie an deren Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
+  description: "Auslieferungspartner aus Wien. Wir holen Ware im Lager von Partnerunternehmen ab und stellen sie an deren Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
   url: "https://magotransport.at",
   telephone: "+4369911147070",
   email: "info@magotransport.at",
@@ -25,8 +25,11 @@ const localBusinessSchema = {
   address: { "@type": "PostalAddress", streetAddress: "Alxingergasse 16/7a", addressLocality: "Wien", postalCode: "1100", addressCountry: "AT" },
   geo: { "@type": "GeoCoordinates", latitude: 48.1772, longitude: 16.3776 },
   hasMap: "https://www.google.com/maps/search/?api=1&query=Alxingergasse+16%2F7a+1100+Wien",
-  areaServed: { "@type": "City", name: "Wien" },
-  serviceArea: { "@type": "GeoCircle", geoMidpoint: { "@type": "GeoCoordinates", latitude: 48.1772, longitude: 16.3776 }, geoRadius: "40000" },
+  areaServed: [
+    { "@type": "City", name: "Wien" },
+    { "@type": "Country", name: "Österreich" },
+  ],
+  serviceArea: { "@type": "Country", name: "Österreich" },
 };
 
 export default function Startseite() {

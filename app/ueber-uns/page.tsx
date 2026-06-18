@@ -6,14 +6,14 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Über MAGOTransport",
-  description: "MAGOTransport aus Wien, gegründet 2007. Auslieferungspartner für Unternehmen in Wien und Wien-Umgebung, dazu Abschleppdienst und Fahrzeugtransport.",
+  description: "MAGOTransport aus Wien, gegründet 2007. Auslieferungspartner für Unternehmen in Wien und ganz Österreich, dazu Abschleppdienst und Fahrzeugtransport.",
 };
 
 const werte = [
   { icon: Shield, title: "Verlässliche Zustellung", desc: "Wir holen die Ware ab und stellen sie zu. Nach jeder Tour gibt es eine Rückmeldung an den Partner.", color: "blue" },
   { icon: Target, title: "Klare Absprachen", desc: "Wir stimmen Abholzeiten, Gebiet und Touren mit dem Partnerunternehmen ab. Ohne Überraschungen.", color: "purple" },
   { icon: Award, title: "Eigener Fuhrpark", desc: "15 Lkw und zwei große Anhänger, regelmäßig gewartet. Wir fahren mit eigenen Fahrzeugen und eigenen Fahrern.", color: "amber" },
-  { icon: Users, title: "Eingespieltes Team", desc: "Rund 15 Mitarbeiter, die die Strecken in Wien und Umgebung kennen.", color: "green" },
+  { icon: Users, title: "Eingespieltes Team", desc: "Rund 15 Mitarbeiter, die die Strecken in Wien und ganz Österreich kennen.", color: "green" },
 ];
 
 const colorConf: Record<string, string> = {
@@ -25,7 +25,7 @@ const colorConf: Record<string, string> = {
 
 const meilensteine = [
   { jahr: "2007", ereignis: "Gründung von MAGOTransport in Wien als Auslieferungspartner für Unternehmen." },
-  { jahr: "seit 2007", ereignis: "Aufbau fester Partnerschaften mit Unternehmen in Wien und Wien-Umgebung." },
+  { jahr: "seit 2007", ereignis: "Aufbau fester Partnerschaften mit Unternehmen in Wien und ganz Österreich." },
   { jahr: "Fuhrpark", ereignis: "Wachstum auf 15 Lkw für die tägliche Auslieferung." },
   { jahr: "Abschleppdienst", ereignis: "Zwei große Anhänger für Abschleppdienst und Fahrzeugtransport." },
   { jahr: "heute", ereignis: "Rund 15 Mitarbeiter und über 2000 zufriedene Kunden." },
@@ -39,7 +39,7 @@ export default function UeberUnsPage() {
         badgeColor="purple"
         orbColor="purple"
         title={<>Seit 2007 Ihr <span className="gradient-text">Auslieferungspartner in Wien</span></>}
-        description="MAGOTransport ist Auslieferungspartner für Unternehmen in Wien und Wien-Umgebung. Wir holen Ware im Partnerlager ab und stellen sie an die Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport."
+        description="MAGOTransport ist Auslieferungspartner für Unternehmen in Wien und ganz Österreich. Wir holen Ware im Partnerlager ab und stellen sie an die Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport."
       />
 
       {/* Geschichte */}
@@ -59,7 +59,7 @@ export default function UeberUnsPage() {
               <p className="text-slate-600 leading-relaxed">
                 Heute fahren wir mit 15 Lkw und zwei großen Anhängern, sind rund 15 Mitarbeiter und
                 haben über 2000 zufriedene Kunden, von kleinen Betrieben bis zu größeren Unternehmen
-                in Wien und Umgebung.
+                in Wien und ganz Österreich.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.15} direction="left">
@@ -131,7 +131,7 @@ export default function UeberUnsPage() {
       <section id="karriere" className="py-20 border-t border-slate-200">
         <AnimatedSection className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Mitfahren bei MAGOTransport</h2>
-          <p className="text-slate-600 mb-8">Wir suchen Fahrer für die Auslieferung in Wien und Wien-Umgebung. Wenn Sie die Strecken kennen und verlässlich arbeiten, melden Sie sich bei uns.</p>
+          <p className="text-slate-600 mb-8">Wir suchen Fahrer für die Auslieferung in Wien und ganz Österreich. Wenn Sie die Strecken kennen und verlässlich arbeiten, melden Sie sich bei uns.</p>
           <Link href="/kontakt?betreff=Karriere" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold transition-all cursor-pointer shadow-primary">
             Jetzt bewerben <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>

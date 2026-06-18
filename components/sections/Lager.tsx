@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const prozesse = [
   { step: "01", label: "Abholung beim Partner", desc: "Wir fahren zum Lager des Partnerunternehmens und holen die Ware ab.",        icon: Warehouse },
-  { step: "02", label: "Tourenplanung",         desc: "Wir bündeln die Lieferungen zu Touren in Wien und Wien-Umgebung.",         icon: Map },
+  { step: "02", label: "Tourenplanung",         desc: "Wir bündeln die Lieferungen zu Touren in Wien und ganz Österreich.",         icon: Map },
   { step: "03", label: "Zustellung",            desc: "Wir bringen die Ware direkt zum Kunden des Partnerunternehmens.",           icon: Truck },
   { step: "04", label: "Rückmeldung",           desc: "Nach der Zustellung melden wir zurück, damit der Partner den Überblick behält.", icon: ClipboardCheck },
 ];
@@ -30,12 +30,12 @@ export function Lager() {
             <p className="text-slate-600 leading-relaxed mb-8">
               Wir sind Auslieferungspartner für andere Unternehmen. Wir holen die Ware im Lager Ihres
               Betriebs ab und stellen sie an Ihre Kunden zu. Ein eigenes Lager betreiben wir nicht,
-              wir kümmern uns um die Zustellung in Wien und Wien-Umgebung.
+              wir kümmern uns um die Zustellung in Wien und ganz Österreich.
             </p>
 
             <div className="grid grid-cols-2 gap-3 mb-8">
               {[
-                { value: "Wien", label: "und Wien-Umgebung" },
+                { value: "Wien", label: "und ganz Österreich" },
                 { value: "15", label: "Lkw im Einsatz" },
                 { value: "seit 2007", label: "im Geschäft" },
                 { value: "2000+", label: "zufriedene Kunden" },

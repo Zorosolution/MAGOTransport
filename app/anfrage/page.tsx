@@ -26,7 +26,7 @@ interface AnfrageData {
 }
 
 const transportTypen = [
-  { id: "auslieferung",  label: "Auslieferung",           desc: "Wien und Wien-Umgebung",       icon: "📦" },
+  { id: "auslieferung",  label: "Auslieferung",           desc: "Wien und ganz Österreich",       icon: "📦" },
   { id: "partner",       label: "Partnerschaft",          desc: "Feste Zusammenarbeit",         icon: "🤝" },
   { id: "express",       label: "Express oder Sonderfahrt", desc: "Dringend und zeitkritisch",  icon: "⚡" },
   { id: "abschlepp",     label: "Abschleppdienst",        desc: "Auto abschleppen lassen",      icon: "🏗️" },

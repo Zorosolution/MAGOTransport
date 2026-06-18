@@ -8,7 +8,7 @@ const leistungen = [
   {
     icon: Package,
     title: "Auslieferung für Unternehmen",
-    description: "Wir liefern die Ware unserer Partnerunternehmen an deren Kunden in Wien und Wien-Umgebung. Termingenau und mit Rückmeldung nach jeder Zustellung.",
+    description: "Wir liefern die Ware unserer Partnerunternehmen an deren Kunden in Wien und ganz Österreich. Termingenau und mit Rückmeldung nach jeder Zustellung.",
     accent: "blue",
     size: "large",
     href: "/leistungen#auslieferung",
@@ -32,7 +32,7 @@ const leistungen = [
   {
     icon: Handshake,
     title: "Partnerschaften",
-    description: "Wir arbeiten mit Unternehmen in Wien und Wien-Umgebung zusammen und sind offen für neue Partnerschaften. Sprechen Sie uns an.",
+    description: "Wir arbeiten mit Unternehmen in Wien und ganz Österreich zusammen und sind offen für neue Partnerschaften. Sprechen Sie uns an.",
     accent: "blue",
     size: "large",
     href: "/leistungen#partnerschaft",
@@ -40,7 +40,7 @@ const leistungen = [
   {
     icon: AlertCircle,
     title: "Abschleppdienst",
-    description: "Mit unseren großen Anhängern schleppen wir Autos in Wien und Wien-Umgebung ab. Rufen Sie uns an.",
+    description: "Mit unseren großen Anhängern schleppen wir Autos in Wien und ganz Österreich ab. Rufen Sie uns an.",
     accent: "amber",
     size: "small",
     href: "/abschleppdienst",
@@ -76,7 +76,7 @@ export function Features() {
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
             Wir holen die Ware im Lager unserer Partnerunternehmen ab und stellen sie an deren Kunden zu.
-            Dazu Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.
+            Dazu Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.
           </p>
         </AnimatedSection>
 

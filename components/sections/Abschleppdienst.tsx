@@ -9,7 +9,7 @@ import towingImg from "../../public/mago_claude_ready_v2/02_towing_city_einsatz.
 
 const services = [
   { icon: Zap,     title: "Autos abschleppen",   desc: "Mit unseren großen Anhängern" },
-  { icon: MapPin,  title: "Wien und Umgebung",   desc: "In Wien und im Umland unterwegs" },
+  { icon: MapPin,  title: "Wien und ganz Österreich",   desc: "In Wien und ganz Österreich unterwegs" },
   { icon: Shield,  title: "Sicher verzurrt",     desc: "Schonend für Ihr Fahrzeug" },
   { icon: Clock,   title: "Ausland auf Anfrage", desc: "In seltenen Fällen, nur nach Absprache" },
 ];
@@ -35,12 +35,11 @@ export function Abschleppdienst() {
 
             <h2 id="asd-heading" className="text-3xl sm:text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Abschleppdienst und Fahrzeugtransport{" "}
-              <span className="gradient-text-amber">in Wien und Umgebung</span>
+              <span className="gradient-text-amber">in Wien und ganz Österreich</span>
             </h2>
 
             <p className="text-slate-600 leading-relaxed mb-6">
-              Mit unseren großen Anhängern schleppen und transportieren wir Autos in Wien und
-              Wien-Umgebung. In seltenen Fällen bringen wir ein Auto auch ins Ausland, aber nur
+              Mit unseren großen Anhängern schleppen und transportieren wir Autos in Wien und ganz Österreich. In seltenen Fällen bringen wir ein Auto auch ins Ausland, aber nur
               auf Anfrage. Rufen Sie uns an, wir besprechen Termin und Ort.
             </p>
 
@@ -115,7 +114,7 @@ export function Abschleppdienst() {
 
                   <div className="space-y-3">
                     {[
-                      { label: "Einsatzgebiet", value: "Wien und Umgebung" },
+                      { label: "Einsatzgebiet", value: "Wien und ganz Österreich" },
                       { label: "Anhänger", value: "Zwei große Anhänger" },
                       { label: "Fahrzeuge", value: "Autos abschleppen" },
                       { label: "Ausland", value: "Nur auf Anfrage" },

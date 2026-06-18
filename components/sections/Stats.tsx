@@ -19,7 +19,7 @@ export function Stats() {
       <div className="relative max-w-6xl mx-auto px-6">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-2xl font-bold text-slate-900">MAGOTransport in Zahlen</h2>
-          <p className="text-slate-500 text-sm mt-2">Seit 2007 im Geschäft. In Wien und Wien-Umgebung.</p>
+          <p className="text-slate-500 text-sm mt-2">Seit 2007 im Geschäft. In Wien und ganz Österreich.</p>
         </AnimatedSection>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {kennzahlen.map((k, i) => (

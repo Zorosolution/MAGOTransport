@@ -17,14 +17,14 @@ const fahrzeuge = [
     capacity: "für größere Mengen",
     desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.",
     color: "blue",
-    specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und Umgebung"],
+    specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und ganz Österreich"],
     img: imgGrosseLkw,
   },
   {
     type: "Kleine Lkw",
     count: "10",
     capacity: "für die Zustellung",
-    desc: "Zehn kleine Lkw für die wendige Zustellung in der Stadt und im Umland, mit vielen Stopps pro Tour.",
+    desc: "Zehn kleine Lkw für die wendige Zustellung in Wien und ganz Österreich, mit vielen Stopps pro Tour.",
     color: "purple",
     specs: ["Wendig im Stadtverkehr", "Tägliche Touren", "Zustellung beim Endkunden"],
     img: imgKleineLkw,
@@ -33,9 +33,9 @@ const fahrzeuge = [
     type: "Abschlepp-Lkw",
     count: "1",
     capacity: "für Pannen und Unfälle",
-    desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
+    desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
     color: "amber",
-    specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und Umgebung"],
+    specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und ganz Österreich"],
     img: imgAbschlepp,
   },
   {
@@ -66,7 +66,7 @@ export function Fuhrpark() {
           </span>
           <h2 id="fuhrpark-heading" className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-5">
             Unser Fuhrpark{" "}
-            <span className="gradient-text">für Wien und Umgebung</span>
+            <span className="gradient-text">für Wien und ganz Österreich</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
             Wir fahren mit 15 Lkw und zwei großen Anhängern. Die Lkw sind täglich für die

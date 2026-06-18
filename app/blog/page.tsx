@@ -41,7 +41,7 @@ export const posts = [
   {
     slug: "zustellung-wien-letzte-meile",
     title: "Zustellung in Wien: Worauf es auf der letzten Meile ankommt",
-    excerpt: "Enge Gassen, Parkverbote und Zeitfenster. Was die Zustellung in Wien und Umgebung in der Praxis ausmacht.",
+    excerpt: "Enge Gassen, Parkverbote und Zeitfenster. Was die Zustellung in Wien und ganz Österreich in der Praxis ausmacht.",
     category: "Auslieferung",
     categoryColor: "text-blue-700 bg-blue-50",
     date: "18. Mai 2025",
@@ -69,7 +69,7 @@ export const posts = [
   {
     slug: "auto-transportieren-anhaenger",
     title: "Auto transportieren lassen: Worauf es ankommt",
-    excerpt: "Wann ein Anhänger statt der eigenen Fahrt sinnvoll ist und wie der Transport in Wien und Umgebung abläuft.",
+    excerpt: "Wann ein Anhänger statt der eigenen Fahrt sinnvoll ist und wie der Transport in Wien und ganz Österreich abläuft.",
     category: "Ratgeber",
     categoryColor: "text-amber-700 bg-amber-50",
     date: "2. Mai 2025",
