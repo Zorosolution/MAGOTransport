@@ -45,7 +45,7 @@ const footerLinks = {
 };
 
 const kontaktInfo = [
-  { icon: Mail,   text: "office@magotransport.at",  href: "mailto:office@magotransport.at" },
+  { icon: Mail,   text: "info@magotransport.at",  href: "mailto:info@magotransport.at" },
   { icon: Phone,  text: "+43 699 11147070",           href: "tel:+4369911147070" },
   { icon: Phone,  text: "Abschleppdienst: +43 699 11147070",  href: "tel:+4369911147070" },
   { icon: MapPin, text: "Alxingergasse 16/7a, 1100 Wien", href: "https://www.google.com/maps/search/?api=1&query=Alxingergasse+16%2F7a+1100+Wien" },

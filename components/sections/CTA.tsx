@@ -65,11 +65,11 @@ export function CTA() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <a
-                  href="mailto:office@magotransport.at"
+                  href="mailto:info@magotransport.at"
                   className="flex items-center gap-2 text-blue-100 hover:text-white text-sm transition-colors cursor-pointer"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" />
-                  office@magotransport.at
+                  info@magotransport.at
                 </a>
                 <Link
                   href="/kontakt"

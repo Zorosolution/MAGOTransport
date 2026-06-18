@@ -23,7 +23,7 @@ const faqs = [
   {
     kategorie: "Preise und Angebote",
     items: [
-      { f: "Wie erhalte ich ein Angebot?", a: "Ein Angebot erhalten Sie kostenlos und unverbindlich über unser Anfrageformular, per E-Mail an office@magotransport.at oder telefonisch unter +43 699 11147070. Wir melden uns mit einem Angebot." },
+      { f: "Wie erhalte ich ein Angebot?", a: "Ein Angebot erhalten Sie kostenlos und unverbindlich über unser Anfrageformular, per E-Mail an info@magotransport.at oder telefonisch unter +43 699 11147070. Wir melden uns mit einem Angebot." },
       { f: "Gibt es Festpreise oder wird nach Aufwand abgerechnet?", a: "Das hängt vom Auftrag ab. Bei regelmäßiger Auslieferung vereinbaren wir feste Konditionen, beim Abschleppdienst nennen wir vorab einen Festpreis nach Strecke und Ziel. Den Preis nennen wir immer vorher." },
       { f: "Können auch Privatpersonen anfragen?", a: "Die Auslieferung machen wir für Unternehmen. Beim Abschleppdienst und Fahrzeugtransport können sich auch Privatpersonen an uns wenden." },
     ],

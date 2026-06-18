@@ -43,7 +43,7 @@ const kontaktInfo: {
   { icon: Phone, label: "Telefon", value: "+43 699 11147070", href: "tel:+4369911147070" },
   { icon: WhatsAppIcon, label: "WhatsApp", value: "Nachricht schreiben", href: WHATSAPP_LINK, tone: "green" },
   { icon: Phone, label: "Abschleppdienst", value: "+43 699 11147070", href: "tel:+4369911147070" },
-  { icon: Mail, label: "E-Mail", value: "office@magotransport.at", href: "mailto:office@magotransport.at" },
+  { icon: Mail, label: "E-Mail", value: "info@magotransport.at", href: "mailto:info@magotransport.at" },
   { icon: MapPin, label: "Adresse", value: "Alxingergasse 16/7a\n1100 Wien, Österreich", href: MAPS_LINK },
 ];
 

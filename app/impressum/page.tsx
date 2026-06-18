@@ -23,7 +23,7 @@ export default function ImpressumPage() {
                 { heading: "Kontakt", content: (
                   <div className="text-slate-600 text-sm space-y-1">
                     <p>Telefon: <a href="tel:+4369911147070" className="text-blue-700 hover:text-blue-800 transition-colors">+43 699 11147070</a></p>
-                    <p>E-Mail: <a href="mailto:office@magotransport.at" className="text-blue-700 hover:text-blue-800 transition-colors">office@magotransport.at</a></p>
+                    <p>E-Mail: <a href="mailto:info@magotransport.at" className="text-blue-700 hover:text-blue-800 transition-colors">info@magotransport.at</a></p>
                     <p>Web: <a href="https://magotransport.at" className="text-blue-700 hover:text-blue-800 transition-colors">www.magotransport.at</a></p>
                   </div>
                 )},
