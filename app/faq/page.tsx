@@ -7,16 +7,16 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Häufige Fragen (FAQ)",
-  description: "Häufig gestellte Fragen zu MAGOTransport: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
+  description: "Häufig gestellte Fragen zu MAGOTransport: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
 };
 
 const faqs = [
   {
     kategorie: "Auslieferung und Partnerschaft",
     items: [
-      { f: "Was macht MAGOTransport genau?", a: "Wir sind Auslieferungspartner für andere Unternehmen. Wir fahren zum Lager des Partnerbetriebs, holen die Ware ab und liefern sie an dessen Kunden aus. Tätig sind wir in Wien und Wien-Umgebung." },
+      { f: "Was macht MAGOTransport genau?", a: "Wir sind Auslieferungspartner für andere Unternehmen. Wir fahren zum Lager des Partnerbetriebs, holen die Ware ab und liefern sie an dessen Kunden aus. Tätig sind wir in Wien und ganz Österreich." },
       { f: "Betreiben Sie ein eigenes Lager?", a: "Nein. Ein eigenes Lager haben wir nicht. Wir holen die Ware im Lager unserer Partnerunternehmen ab und stellen sie an deren Kunden zu." },
-      { f: "Wo liefern Sie aus?", a: "Wir liefern in Wien und Wien-Umgebung aus. Ein größeres Gebiet oder Auslieferung außerhalb davon bieten wir nicht an." },
+      { f: "Wo liefern Sie aus?", a: "Wir liefern in Wien und ganz Österreich aus. Ein größeres Gebiet oder Auslieferung außerhalb davon bieten wir nicht an." },
       { f: "Wie wird man Partnerunternehmen?", a: "Schreiben Sie uns über das Kontaktformular oder rufen Sie an. Wir besprechen Lieferumfang, Gebiet und Abholzeiten. Wir arbeiten bereits mit Unternehmen zusammen und sind offen für neue Partnerschaften." },
     ],
   },
@@ -32,7 +32,7 @@ const faqs = [
     kategorie: "Abschleppdienst und Fahrzeugtransport",
     items: [
       { f: "Welche Fahrzeuge können Sie abschleppen?", a: "Wir schleppen und transportieren Autos. Dafür haben wir zwei große Anhänger und einen Abschlepp-Lkw. Nennen Sie uns bei der Anfrage den Fahrzeugtyp." },
-      { f: "Sind Sie auch außerhalb von Wien tätig?", a: "Wir sind in Wien und Wien-Umgebung unterwegs. In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage." },
+      { f: "Sind Sie auch außerhalb von Wien tätig?", a: "Wir sind in Wien und ganz Österreich unterwegs. In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage." },
       { f: "Was kostet ein Abschleppvorgang?", a: "Die Kosten richten sich nach Strecke und Ziel. Wir nennen Ihnen vor dem Einsatz einen Festpreis. Rufen Sie uns an: +43 699 11147070." },
       { f: "Wie läuft der Abschleppdienst ab?", a: "Sie rufen an und nennen uns Standort und Ziel. Wir kommen mit dem Anhänger, verladen das Auto sicher verzurrt und bringen es an den vereinbarten Ort." },
     ],

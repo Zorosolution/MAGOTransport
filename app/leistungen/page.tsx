@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Leistungen",
-  description: "MAGOTransport Leistungen: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
+  description: "MAGOTransport Leistungen: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
   keywords: ["Auslieferung Wien", "Auslieferungspartner", "Zustellung Wien", "Abschleppdienst Wien", "Fahrzeugtransport Wien", "Logistikpartner Wien"],
 };
 
@@ -17,9 +17,9 @@ const leistungsGruppen = [
     icon: "📦",
     color: "blue",
     headline: "Wir liefern die Ware Ihrer Firma an Ihre Kunden aus",
-    description: "Wir sind Auslieferungspartner für andere Unternehmen. Wir holen die Ware im Lager Ihres Betriebs ab und stellen sie an Ihre Kunden zu. Ein eigenes Lager betreiben wir nicht, wir kümmern uns um die Zustellung in Wien und Wien-Umgebung.",
+    description: "Wir sind Auslieferungspartner für andere Unternehmen. Wir holen die Ware im Lager Ihres Betriebs ab und stellen sie an Ihre Kunden zu. Ein eigenes Lager betreiben wir nicht, wir kümmern uns um die Zustellung in Wien und ganz Österreich.",
     features: [
-      "Wien und Wien-Umgebung",
+      "Wien und ganz Österreich",
       "Abholung im Lager des Partnerunternehmens",
       "Zustellung direkt beim Endkunden",
       "Feste oder flexible Touren",
@@ -52,7 +52,7 @@ const leistungsGruppen = [
     icon: "⚡",
     color: "amber",
     headline: "Wenn es schnell gehen muss",
-    description: "Dringende Zustellungen am selben Tag oder kurzfristige Sonderfahrten. In Wien und Wien-Umgebung, nach Absprache auch abends und am Wochenende.",
+    description: "Dringende Zustellungen am selben Tag oder kurzfristige Sonderfahrten. In Wien und ganz Österreich, nach Absprache auch abends und am Wochenende.",
     features: [
       "Zustellung am selben Tag",
       "Sonderfahrten auf Abruf",
@@ -60,7 +60,7 @@ const leistungsGruppen = [
       "Direkte Fahrt ohne Umweg",
       "Persönliche Auftragsbetreuung",
       "Feste Ansprechperson",
-      "Wien und Wien-Umgebung",
+      "Wien und ganz Österreich",
     ],
   },
   {
@@ -69,12 +69,12 @@ const leistungsGruppen = [
     icon: "🚗",
     color: "blue",
     headline: "Autos abschleppen und transportieren",
-    description: "Mit unseren zwei großen Anhängern schleppen und transportieren wir Autos in Wien und Wien-Umgebung. In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage.",
+    description: "Mit unseren zwei großen Anhängern schleppen und transportieren wir Autos in Wien und ganz Österreich. In seltenen Fällen transportieren wir ein Auto auch ins Ausland, aber nur auf Anfrage.",
     features: [
       "Autos abschleppen und transportieren",
       "Zwei große Anhänger",
       "Sicher verzurrt",
-      "Wien und Wien-Umgebung",
+      "Wien und ganz Österreich",
       "Transport ins Ausland nur auf Anfrage",
       "Abstimmung von Termin und Ort",
     ],
@@ -96,7 +96,7 @@ export default function LeistungenPage() {
         badgeColor="sky"
         orbColor="blue"
         title={<>Auslieferung und Abschleppdienst <span className="gradient-text">in Wien</span></>}
-        description="Wir liefern die Ware unserer Partnerunternehmen an deren Kunden aus. Dazu Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung."
+        description="Wir liefern die Ware unserer Partnerunternehmen an deren Kunden aus. Dazu Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich."
       />
 
       <section className="py-20" aria-label="Leistungsübersicht">
@@ -144,7 +144,7 @@ export default function LeistungenPage() {
       <section className="py-20 border-t border-slate-200 bg-slate-50">
         <AnimatedSection className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Auto abschleppen lassen?</h2>
-          <p className="text-slate-600 mb-8">Rufen Sie uns an. Wir schleppen Ihr Auto in Wien und Wien-Umgebung ab und besprechen Termin und Ort.</p>
+          <p className="text-slate-600 mb-8">Rufen Sie uns an. Wir schleppen Ihr Auto in Wien und ganz Österreich ab und besprechen Termin und Ort.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+4369911147070" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold transition-all cursor-pointer shadow-cta">
               <Phone className="w-4 h-4" aria-hidden="true" />+43 699 11147070

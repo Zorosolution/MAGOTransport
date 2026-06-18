@@ -32,7 +32,7 @@ export function CTA() {
 
               <p className="text-blue-100 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
                 Wir holen die Ware im Lager Ihres Unternehmens ab und stellen sie an Ihre Kunden
-                in Wien und Wien-Umgebung zu. Schreiben Sie uns, wir melden uns mit einem Angebot.
+                in Wien und ganz Österreich zu. Schreiben Sie uns, wir melden uns mit einem Angebot.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">

@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 const pakete = [
   {
     name: "Standardzustellung",
-    subtitle: "Wien und Wien-Umgebung",
+    subtitle: "Wien und ganz Österreich",
     description: "Regelmäßige Auslieferung Ihrer Ware an Ihre Kunden. Wir holen im Lager Ihres Betriebs ab und stellen zu.",
     features: [
-      "Wien und Wien-Umgebung",
+      "Wien und ganz Österreich",
       "Abholung im Partnerlager",
       "Zustellung beim Endkunden",
       "Feste oder flexible Touren",
@@ -42,13 +42,13 @@ const pakete = [
   {
     name: "Abschleppdienst und Fahrzeugtransport",
     subtitle: "Autos abschleppen und transportieren",
-    description: "Mit unseren zwei großen Anhängern schleppen und transportieren wir Autos in Wien und Wien-Umgebung.",
+    description: "Mit unseren zwei großen Anhängern schleppen und transportieren wir Autos in Wien und ganz Österreich.",
     features: [
       "Autos abschleppen",
       "Autos transportieren",
       "Zwei große Anhänger",
       "Sicher verzurrt",
-      "Wien und Wien-Umgebung",
+      "Wien und ganz Österreich",
       "Ausland nur auf Anfrage",
     ],
     cta: "Anfrage stellen",

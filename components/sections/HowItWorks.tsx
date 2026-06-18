@@ -16,7 +16,7 @@ const schritte = [
     n: "02",
     icon: Truck,
     title: "Transport",
-    description: "Wir bringen die Ware auf unseren Lkw durch Wien und Wien-Umgebung. Pro Tour stellen wir mehrere Lieferungen zu.",
+    description: "Wir bringen die Ware auf unseren Lkw durch Wien und ganz Österreich. Pro Tour stellen wir mehrere Lieferungen zu.",
   },
   {
     n: "03",

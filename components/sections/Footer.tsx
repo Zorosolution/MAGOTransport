@@ -108,7 +108,7 @@ export function Footer() {
         <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5 mb-12 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" aria-hidden="true" />
-            <p className="text-slate-900 font-semibold text-sm">Abschleppdienst in Wien und Wien-Umgebung. Rufen Sie uns an.</p>
+            <p className="text-slate-900 font-semibold text-sm">Abschleppdienst in Wien und ganz Österreich. Rufen Sie uns an.</p>
           </div>
           <a
             href="tel:+4369911147070"
@@ -134,7 +134,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-slate-600 text-sm leading-relaxed max-w-xs mb-5">
-              Auslieferungspartner in Wien und Wien-Umgebung. Wir holen Ware bei Unternehmen ab
+              Auslieferungspartner in Wien und ganz Österreich. Wir holen Ware bei Unternehmen ab
               und stellen sie an deren Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport.
             </p>
             <address className="not-italic space-y-2 mb-5">
@@ -183,7 +183,7 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
-              <span className="text-slate-500 text-xs">Wien und Wien-Umgebung</span>
+              <span className="text-slate-500 text-xs">Wien und ganz Österreich</span>
             </div>
             <div className="flex items-center gap-4">
               {[

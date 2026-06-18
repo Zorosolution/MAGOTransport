@@ -106,7 +106,7 @@ export default function OpengraphImage() {
           }}
         >
           <span style={{ fontSize: "26px", color: "#475569", fontWeight: 500 }}>
-            Auslieferung · Abschleppdienst · Wien und Wien-Umgebung
+            Auslieferung · Abschleppdienst · Wien und ganz Österreich
           </span>
           <div
             style={{

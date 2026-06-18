@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: Props) {
 
               <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Wie wir arbeiten</h2>
               <p>
-                Seit 2007 liefern wir in Wien und Wien-Umgebung aus. Daraus haben sich einige Grundsätze
+                Seit 2007 liefern wir in Wien und ganz Österreich aus. Daraus haben sich einige Grundsätze
                 ergeben, die wir bei jeder Tour anwenden.
               </p>
 
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-4">Wie MAGOTransport unterstützt</h2>
               <p>
                 Ob Auslieferung für Ihren Betrieb, Abschleppdienst oder Fahrzeugtransport: Wir sind in
-                Wien und Wien-Umgebung für Sie unterwegs. Sprechen Sie uns an, wir melden uns mit einem
+                Wien und ganz Österreich für Sie unterwegs. Sprechen Sie uns an, wir melden uns mit einem
                 Angebot.
               </p>
             </div>

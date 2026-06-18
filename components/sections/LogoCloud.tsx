@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 const merkmale = [
   { name: "Auslieferung für Unternehmen", width: 220 },
-  { name: "Wien und Wien-Umgebung", width: 190 },
+  { name: "Wien und ganz Österreich", width: 190 },
   { name: "Abschleppdienst", width: 130 },
   { name: "Fahrzeugtransport", width: 150 },
   { name: "Seit 2007", width: 90 },

@@ -5,7 +5,7 @@ import { Star, Quote } from "lucide-react";
 
 const bewertungen = [
   {
-    text: "MAGOTransport übernimmt die Auslieferung an unsere Kunden in Wien und Umgebung. Die Ware wird bei uns abgeholt und zugestellt, und wir bekommen nach jeder Tour eine Rückmeldung.",
+    text: "MAGOTransport übernimmt die Auslieferung an unsere Kunden in Wien und ganz Österreich. Die Ware wird bei uns abgeholt und zugestellt, und wir bekommen nach jeder Tour eine Rückmeldung.",
     name: "Thomas Bauer",
     title: "Geschäftsführer",
     company: "Partnerunternehmen, Wien",
@@ -26,7 +26,7 @@ const bewertungen = [
     text: "Seit wir die Zustellung an MAGOTransport ausgelagert haben, läuft die Auslieferung an unsere Kunden ohne Probleme. Gut erreichbar und verlässlich.",
     name: "Klaus Steinberger",
     title: "Betriebsleiter",
-    company: "Partnerunternehmen, Wien-Umgebung",
+    company: "Partnerunternehmen, Österreich",
     avatar: "KS",
     avatarColor: "from-emerald-400 to-emerald-600",
     rating: 5,
@@ -53,7 +53,7 @@ const bewertungen = [
     text: "Ich musste mein Auto transportieren lassen. MAGOTransport hat es mit dem großen Anhänger geholt und sicher verzurrt gebracht. Genau wie besprochen.",
     name: "Stefan Grünwald",
     title: "Privatkunde",
-    company: "Wien-Umgebung",
+    company: "Österreich",
     avatar: "SG",
     avatarColor: "from-teal-400 to-teal-600",
     rating: 5,
@@ -128,7 +128,7 @@ export function Testimonials() {
           <div className="w-px h-12 bg-slate-200 hidden sm:block" aria-hidden="true" />
           <div className="text-center">
             <div className="text-4xl font-bold text-blue-700">Wien</div>
-            <p className="text-slate-500 text-xs mt-2">und Wien-Umgebung</p>
+            <p className="text-slate-500 text-xs mt-2">und ganz Österreich</p>
           </div>
         </AnimatedSection>
       </div>

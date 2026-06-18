@@ -4,7 +4,7 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { motion, useReducedMotion } from "framer-motion";
 import { MapPin, Check } from "lucide-react";
 
-const punkte = ["Wien", "Wien-Umgebung", "Ausland nur auf Anfrage"];
+const punkte = ["Wien", "Österreich", "Ausland nur auf Anfrage"];
 
 export function Einsatzgebiet() {
   const reduceMotion = useReducedMotion();
@@ -22,7 +22,7 @@ export function Einsatzgebiet() {
             </span>
             <h2 id="gebiet-heading" className="text-3xl sm:text-4xl font-bold text-slate-900 mb-5 leading-tight text-balance">
               Unterwegs in{" "}
-              <span className="gradient-text">Wien und Wien-Umgebung</span>
+              <span className="gradient-text">Wien und ganz Österreich</span>
             </h2>
             <p className="text-slate-600 leading-relaxed mb-7 max-w-lg">
               Unsere Touren decken Wien und das nähere Umland ab. Auslieferung für Unternehmen,
