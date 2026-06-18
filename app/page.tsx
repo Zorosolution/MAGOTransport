@@ -20,7 +20,7 @@ const localBusinessSchema = {
   description: "Auslieferungspartner aus Wien. Wir holen Ware im Lager von Partnerunternehmen ab und stellen sie an deren Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport in Wien und Wien-Umgebung.",
   url: "https://magotransport.at",
   telephone: "+4369911147070",
-  email: "office@magotransport.at",
+  email: "info@magotransport.at",
   priceRange: "€€",
   address: { "@type": "PostalAddress", streetAddress: "Alxingergasse 16/7a", addressLocality: "Wien", postalCode: "1100", addressCountry: "AT" },
   geo: { "@type": "GeoCoordinates", latitude: 48.1772, longitude: 16.3776 },

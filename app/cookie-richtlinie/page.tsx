@@ -66,7 +66,7 @@ export default function CookieRichtliniePage() {
               </div>
             </div>
             <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-soft mt-4">
-              <p className="text-slate-600 text-sm">Fragen? E-Mail: <a href="mailto:datenschutz@magotransport.at" className="text-blue-700 hover:text-blue-800 transition-colors">datenschutz@magotransport.at</a></p>
+              <p className="text-slate-600 text-sm">Fragen? E-Mail: <a href="mailto:info@magotransport.at" className="text-blue-700 hover:text-blue-800 transition-colors">info@magotransport.at</a></p>
               <p className="text-slate-500 text-xs mt-2">Stand: Juni 2025</p>
             </div>
           </AnimatedSection>

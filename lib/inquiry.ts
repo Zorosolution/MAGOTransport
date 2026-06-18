@@ -23,7 +23,7 @@ export interface InquiryPayload {
   website?: string;
 }
 
-export const INQUIRY_RECIPIENT = "office@magotransport.at";
+export const INQUIRY_RECIPIENT = "info@magotransport.at";
 
 // Zentrale WhatsApp-Verknüpfung (Navbar, CTA, Kontaktleiste, mobile Leiste).
 export const WHATSAPP_LINK = `https://wa.me/4369911147070?text=${encodeURIComponent(
