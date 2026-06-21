@@ -13,6 +13,7 @@ import imgFleet from "../../public/mago_claude_ready_v2/12_fleet_overview_depot.
 export const metadata: Metadata = {
   title: "Fuhrpark",
   description: "MAGOTransport Fuhrpark: 15 Lkw (4 große, 10 kleine, 1 Abschlepp-Lkw) und zwei große Anhänger für Auslieferung, Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
+  alternates: { canonical: "/fuhrpark" },
 };
 
 const flotte = [

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
-export const metadata: Metadata = { title: "Impressum", description: "Impressum der MAGOTransport GmbH. Pflichtangaben gemäß österreichischem E-Commerce-Gesetz und Mediengesetz." };
+export const metadata: Metadata = { title: "Impressum", description: "Impressum der MAGOTransport GmbH. Pflichtangaben gemäß österreichischem E-Commerce-Gesetz und Mediengesetz.", alternates: { canonical: "/impressum" } };
 
 export default function ImpressumPage() {
   return (

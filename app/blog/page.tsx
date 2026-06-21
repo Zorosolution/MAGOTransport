@@ -7,6 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Aktuelles und News",
   description: "Neuigkeiten, Brancheninformationen und Tipps rund um Transport, Logistik und Abschleppdienst von MAGOTransport.",
+  alternates: { canonical: "/blog" },
 };
 
 export const posts = [

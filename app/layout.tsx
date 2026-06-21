@@ -46,7 +46,10 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  alternates: { canonical: "https://magotransport.at" },
+  // Relative Pfad: wird über metadataBase zur Startseiten-URL aufgelöst.
+  // Jede Unterseite setzt ihren eigenen canonical-Pfad, damit nicht alle
+  // Seiten fälschlich auf die Startseite kanonisieren.
+  alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {

@@ -3,11 +3,50 @@ import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import Link from "next/link";
+import { JsonLd } from "@/components/shared/JsonLd";
+
+const provider = {
+  "@type": "LocalBusiness",
+  "@id": "https://magotransport.at/#business",
+  name: "MAGOTransport GmbH",
+  telephone: "+4369911147070",
+};
+const areaServed = [
+  { "@type": "City", name: "Wien" },
+  { "@type": "Country", name: "Österreich" },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      serviceType: "Auslieferung",
+      name: "Auslieferung für Unternehmen in Wien und ganz Österreich",
+      description:
+        "Als Auslieferungspartner holen wir die Ware im Lager Ihres Betriebs ab und stellen sie an Ihre Kunden zu. Ein eigenes Lager betreiben wir nicht.",
+      provider,
+      areaServed,
+      url: "https://magotransport.at/leistungen",
+    },
+    {
+      "@type": "Service",
+      serviceType: "Fahrzeugtransport",
+      name: "Fahrzeugtransport Wien und ganz Österreich",
+      description:
+        "Wir transportieren Autos mit unseren großen Anhängern zu Werkstätten, Händlern oder an Ihren Wunschort. Ausland nur auf Anfrage.",
+      provider,
+      areaServed,
+      url: "https://magotransport.at/leistungen",
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Leistungen",
   description: "MAGOTransport Leistungen: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
   keywords: ["Auslieferung Wien", "Auslieferungspartner", "Zustellung Wien", "Abschleppdienst Wien", "Fahrzeugtransport Wien", "Logistikpartner Wien"],
+  alternates: { canonical: "/leistungen" },
 };
 
 const leistungsGruppen = [
@@ -91,6 +130,7 @@ const colorConf: Record<string, { badge: string }> = {
 export default function LeistungenPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={serviceSchema} />
       <PageHero
         badge="Unsere Leistungen"
         badgeColor="sky"

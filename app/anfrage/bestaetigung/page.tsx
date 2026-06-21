@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { CheckCircle, Mail, Phone, ArrowRight } from "lucide-react";
 
-export const metadata: Metadata = { title: "Anfrage bestätigt", robots: { index: false } };
+export const metadata: Metadata = { title: "Anfrage bestätigt", robots: { index: false }, alternates: { canonical: "/anfrage/bestaetigung" } };
 
 export default function AnfrageBestaetigung() {
   return (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
-export const metadata: Metadata = { title: "Datenschutzerklärung", description: "Datenschutzerklärung der MAGOTransport GmbH gemäß DSGVO und österreichischem Datenschutzgesetz." };
+export const metadata: Metadata = { title: "Datenschutzerklärung", description: "Datenschutzerklärung der MAGOTransport GmbH gemäß DSGVO und österreichischem Datenschutzgesetz.", alternates: { canonical: "/datenschutz" } };
 
 const abschnitte = [
   { heading: "1. Verantwortlicher", body: "MAGOTransport GmbH, Alxingergasse 16/7a, 1100 Wien, Österreich\nE-Mail: info@magotransport.at\nTel.: +43 699 11147070" },

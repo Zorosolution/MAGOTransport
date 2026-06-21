@@ -4,12 +4,51 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Phone, Clock, MapPin, Shield, Check, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { JsonLd } from "@/components/shared/JsonLd";
 import truckImg from "../../public/mago_claude_ready_v2/01_hero_abschleppwagen_gelb.jpg";
+
+const provider = {
+  "@type": "LocalBusiness",
+  "@id": "https://magotransport.at/#business",
+  name: "MAGOTransport GmbH",
+  telephone: "+4369911147070",
+};
+const areaServed = [
+  { "@type": "City", name: "Wien" },
+  { "@type": "Country", name: "Österreich" },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      serviceType: "Abschleppdienst",
+      name: "Abschleppdienst Wien und ganz Österreich",
+      description:
+        "Wir schleppen Autos mit unseren großen Anhängern sicher ab und transportieren sie zur Werkstatt, zum Händler oder an Ihren Wunschort.",
+      provider,
+      areaServed,
+      url: "https://magotransport.at/abschleppdienst",
+    },
+    {
+      "@type": "Service",
+      serviceType: "Pannenhilfe",
+      name: "Pannenhilfe Wien: Abschleppen bei einer Panne",
+      description:
+        "Bei einer Panne holen wir Ihr Auto ab und bringen es mit unserem Anhänger zur Werkstatt oder an Ihren Wunschort in Wien und ganz Österreich.",
+      provider,
+      areaServed,
+      url: "https://magotransport.at/abschleppdienst#pannenhilfe",
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Abschleppdienst und Fahrzeugtransport",
   description: "MAGOTransport Abschleppdienst in Wien und ganz Österreich. Mit unseren großen Anhängern schleppen und transportieren wir Autos. Ausland nur auf Anfrage. Jetzt anrufen.",
-  keywords: ["Abschleppdienst Wien", "Auto abschleppen Wien", "Fahrzeugtransport Wien", "Abschleppdienst Österreich", "Auto transportieren"],
+  keywords: ["Abschleppdienst Wien", "Auto abschleppen Wien", "Fahrzeugtransport Wien", "Abschleppdienst Österreich", "Pannenhilfe Wien", "Auto transportieren"],
+  alternates: { canonical: "/abschleppdienst" },
 };
 
 const leistungen = [
@@ -24,6 +63,7 @@ const leistungen = [
 export default function AbschleppdienstPage() {
   return (
     <div className="min-h-screen">
+      <JsonLd data={serviceSchema} />
       {/* Abschleppdienst-Banner */}
       <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-slate-950 py-2.5 px-4 text-center text-sm font-bold flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
         <span className="animate-pulse" aria-hidden="true">🏗️</span>
