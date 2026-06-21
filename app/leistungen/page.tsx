@@ -91,11 +91,11 @@ const leistungsGruppen = [
     icon: "⚡",
     color: "amber",
     headline: "Wenn es schnell gehen muss",
-    description: "Dringende Zustellungen am selben Tag oder kurzfristige Sonderfahrten. In Wien und ganz Österreich, nach Absprache auch abends und am Wochenende.",
+    description: "Für dringende Transporte, Abschleppdienst und Pannenhilfe sind wir rund um die Uhr erreichbar, in Wien und ganz Österreich.",
     features: [
       "Zustellung am selben Tag",
       "Sonderfahrten auf Abruf",
-      "Abend- und Wochenendfahrten nach Absprache",
+      "Rund um die Uhr erreichbar, auch abends und am Wochenende",
       "Direkte Fahrt ohne Umweg",
       "Persönliche Auftragsbetreuung",
       "Feste Ansprechperson",
