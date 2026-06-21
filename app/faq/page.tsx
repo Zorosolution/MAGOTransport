@@ -8,6 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Häufige Fragen (FAQ)",
   description: "Häufig gestellte Fragen zu MAGOTransport: Auslieferung für Unternehmen, Partnerschaften, Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
-export const metadata: Metadata = { title: "Cookie-Richtlinie", description: "Cookie-Richtlinie der MAGOTransport GmbH. Welche Cookies wir verwenden und wie Sie diese verwalten können." };
+export const metadata: Metadata = { title: "Cookie-Richtlinie", description: "Cookie-Richtlinie der MAGOTransport GmbH. Welche Cookies wir verwenden und wie Sie diese verwalten können.", alternates: { canonical: "/cookie-richtlinie" } };
 
 const cookieTypen = [
   { typ: "Technisch notwendig", erforderlich: true, beispiele: "Session-Cookies, CSRF-Token, Cookie-Einwilligung", zweck: "Für den Betrieb der Website zwingend erforderlich.", dauer: "Session / 12 Monate" },

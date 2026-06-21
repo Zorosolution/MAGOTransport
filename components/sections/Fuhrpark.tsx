@@ -15,7 +15,7 @@ const fahrzeuge = [
     type: "Große Lkw",
     count: "4",
     capacity: "für größere Mengen",
-    desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.",
+    desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen in Wien und ganz Österreich.",
     color: "blue",
     specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und ganz Österreich"],
     img: imgGrosseLkw,

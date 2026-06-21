@@ -13,10 +13,11 @@ import imgFleet from "../../public/mago_claude_ready_v2/12_fleet_overview_depot.
 export const metadata: Metadata = {
   title: "Fuhrpark",
   description: "MAGOTransport Fuhrpark: 15 Lkw (4 große, 10 kleine, 1 Abschlepp-Lkw) und zwei große Anhänger für Auslieferung, Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
+  alternates: { canonical: "/fuhrpark" },
 };
 
 const flotte = [
-  { typ: "Große Lkw", anzahl: 4, nutzlast: "für größere Mengen", img: imgGrosseLkw, desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen im Großraum Wien.", specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und ganz Österreich"], color: "blue" },
+  { typ: "Große Lkw", anzahl: 4, nutzlast: "für größere Mengen", img: imgGrosseLkw, desc: "Vier große Lkw für umfangreiche Lieferungen und größere Mengen in Wien und ganz Österreich.", specs: ["Regelmäßig gewartet", "Erfahrene Fahrer", "Wien und ganz Österreich"], color: "blue" },
   { typ: "Kleine Lkw", anzahl: 10, nutzlast: "für die Zustellung", img: imgKleineLkw, desc: "Zehn kleine Lkw für die wendige Zustellung in Wien und ganz Österreich. Ideal für Touren mit vielen Stopps.", specs: ["Wendig im Stadtverkehr", "Tägliche Touren", "Zustellung beim Endkunden"], color: "purple" },
   { typ: "Abschlepp-Lkw", anzahl: 1, nutzlast: "für Pannen und Unfälle", img: imgAbschlepp, desc: "Ein Abschlepp-Lkw für Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.", specs: ["Autos abschleppen", "Telefonisch erreichbar", "Wien und ganz Österreich"], color: "amber" },
   { typ: "Große Anhänger", anzahl: 2, nutzlast: "für Autotransporte", img: imgAnhaenger, desc: "Zwei große Anhänger, mit denen wir Autos abschleppen und transportieren. In seltenen Fällen auch ins Ausland, nur auf Anfrage.", specs: ["Autos transportieren", "Sicher verzurrt", "Ausland auf Anfrage"], color: "green" },

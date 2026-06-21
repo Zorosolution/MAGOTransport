@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
-export const metadata: Metadata = { title: "AGB: Allgemeine Geschäftsbedingungen", description: "Allgemeine Geschäftsbedingungen der MAGOTransport GmbH für Transport-, Logistik- und Abschleppdienstleistungen." };
+export const metadata: Metadata = { title: "AGB: Allgemeine Geschäftsbedingungen", description: "Allgemeine Geschäftsbedingungen der MAGOTransport GmbH für Transport-, Logistik- und Abschleppdienstleistungen.", alternates: { canonical: "/agb" } };
 
 const abschnitte = [
   { heading: "§ 1 Geltungsbereich", body: "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge über Transport-, Logistik- und Abschleppdienstleistungen der MAGOTransport GmbH (nachfolgend \"Auftragnehmer\") mit ihren Kunden (nachfolgend \"Auftraggeber\"). Abweichende Bedingungen des Auftraggebers haben nur Geltung, wenn sie vom Auftragnehmer ausdrücklich schriftlich anerkannt werden." },

@@ -25,8 +25,8 @@ export function Einsatzgebiet() {
               <span className="gradient-text">Wien und ganz Österreich</span>
             </h2>
             <p className="text-slate-600 leading-relaxed mb-7 max-w-lg">
-              Unsere Touren decken Wien und das nähere Umland ab. Auslieferung für Unternehmen,
-              Abschleppdienst und Fahrzeugtransport, alles im Großraum Wien.
+              Unsere Touren decken Wien und ganz Österreich ab: Auslieferung für Unternehmen,
+              Abschleppdienst und Fahrzeugtransport.
             </p>
             <ul className="space-y-2.5">
               {punkte.map((p) => (

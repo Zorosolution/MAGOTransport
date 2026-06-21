@@ -7,6 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Über MAGOTransport",
   description: "MAGOTransport aus Wien, gegründet 2007. Auslieferungspartner für Unternehmen in Wien und ganz Österreich, dazu Abschleppdienst und Fahrzeugtransport.",
+  alternates: { canonical: "/ueber-uns" },
 };
 
 const werte = [

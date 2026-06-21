@@ -14,17 +14,27 @@ import { JsonLd } from "@/components/shared/JsonLd";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://magotransport.at",
+  "@type": ["LocalBusiness", "AutomotiveBusiness"],
+  "@id": "https://magotransport.at/#business",
   name: "MAGOTransport GmbH",
+  alternateName: "MAGO Transport",
   description: "Auslieferungspartner aus Wien. Wir holen Ware im Lager von Partnerunternehmen ab und stellen sie an deren Kunden zu. Dazu Abschleppdienst und Fahrzeugtransport in Wien und ganz Österreich.",
   url: "https://magotransport.at",
   telephone: "+4369911147070",
   email: "info@magotransport.at",
+  image: "https://magotransport.at/opengraph-image",
+  logo: "https://magotransport.at/logo.svg",
   priceRange: "€€",
   address: { "@type": "PostalAddress", streetAddress: "Alxingergasse 16/7a", addressLocality: "Wien", postalCode: "1100", addressCountry: "AT" },
   geo: { "@type": "GeoCoordinates", latitude: 48.1772, longitude: 16.3776 },
   hasMap: "https://www.google.com/maps/search/?api=1&query=Alxingergasse+16%2F7a+1100+Wien",
+  // Rund um die Uhr erreichbar (Abschleppdienst).
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59",
+  },
   areaServed: [
     { "@type": "City", name: "Wien" },
     { "@type": "Country", name: "Österreich" },
